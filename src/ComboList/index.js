@@ -81,7 +81,7 @@ class SelectedListItem extends React.Component {
                     </Grid>
                     <Grid item sm={12}>
                         {(function () {
-                            let val = self.props.demonPieces;
+                            let val = self.props.dwarfPieces;
                             if (val === null || val === 0) return null
                             else if (val > 1) return 'Attack range increased by 300.';
                         })()}
