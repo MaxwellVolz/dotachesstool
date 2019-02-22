@@ -1,0 +1,125 @@
+.App {
+  text-align: center;
+  /* width:90vw; */
+  /* margin: 0 auto 0 auto */
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Species */
+.beast{
+  background-color:green !important;
+  order:1;
+}
+.dwarf{
+  background-color:brown !important;
+  order:2;
+}
+.demon{
+  background-color:purple !important;
+  order:3;
+}
+.dragon{
+  background: linear-gradient(to right, green 50%, #fff 50%);
+  background-color:green !important;
+  order:4;
+}
+.element{
+  background-color:yellow !important;
+  order:5;
+}
+.elf{
+  background-color:aquamarine !important;
+  order:6;
+}
+.goblin{
+  background-color:greenyellow !important;
+  order:7;
+}
+.human{
+  background-color:peachpuff !important;
+  order:8;
+}
+.naga{
+  background-color:fuchsia !important;
+  order:9;
+}
+.ogre{
+  background-color:blue !important;
+  order:10;
+}
+.orc{
+  background-color:orange !important;
+  order:11;
+}
+.troll{
+  background-color:lightgreen !important;
+  order:12;
+}
+.undead{
+  background-color:grey !important;
+  order:13;
+}
+
+
+/* Classes */
+/* 
+.assassin > div{
+  background-color:yellow;
+}
+.demonhunter > div{
+  background-color:purple;
+}
+.druid > div{
+  background-color:orange;
+}
+.hunter > div{
+  background-color:lightgreen;
+}
+.knight > div{
+  background-color:pink;
+}
+.mage > div{
+  background-color:lightblue;
+}
+.mech > div{
+  background-color:brown;
+}
+.shaman > div{
+  background-color:blue;
+}
+.warlock > div{
+  background-color:purple;
+}
+.warrior > div{
+  background-color:red;
+} 
+*/
