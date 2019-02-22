@@ -19,7 +19,7 @@ const styles = theme => ({
     root: {
         width: '100%',
         // maxWidth: 360,
-        textAlign:'right',
+        textAlign: 'right',
         backgroundColor: theme.palette.background.paper,
     },
     grid: {
@@ -62,27 +62,37 @@ class SelectedListItem extends React.Component {
                 <Grid container spacing={24}>
 
                     <Grid item sm={12}>
-                        
-                        {(function() {
-                            switch(self.props.beastPieces) {
-                            case 6:
-                            case 5:
-                                return 'Attack damage increased by an additional 20% for all allies.';
-                            case 4:
-                            case 3:
-                                return 'Attack damage increased by an additional 15% for all allies.';
-                            case 2:
-                                return 'Attack damage increased by 10% for all allies.';
-                            default:
-                                return null;
-                            }
+
+                        {(function () {
+                            let val = self.props.beastPieces;
+                            if (val === null || val === 0) return null
+                            else if (val > 5) return 'Attack damage increased by 45% for all allies.';
+                            else if (val > 3) return 'Attack damage increased by 25% for all allies.';
+                            else if (val > 1) return 'Attack damage increased by 10% for all allies.';
                         })()}
-                        
+
                     </Grid>
-                    <Grid item sm={12}>beast: {this.props.beastPieces}</Grid>
-                    <Grid item sm={12}>demon: {this.props.demonPieces}</Grid>
-                    <Grid item sm={12}>dwarf: {this.props.dwarfPieces}</Grid>
-                    <Grid item sm={12}>dragon: {this.props.dragonPieces}</Grid>
+                    <Grid item sm={12}>
+                        {(function () {
+                            let val = self.props.demonPieces;
+                            if (val === null || val === 0) return null
+                            else if (val > 0) return 'Fel Power';
+                        })()}
+                    </Grid>
+                    <Grid item sm={12}>
+                        {(function () {
+                            let val = self.props.demonPieces;
+                            if (val === null || val === 0) return null
+                            else if (val > 1) return 'Attack range increased by 300.';
+                        })()}
+                    </Grid>
+                    <Grid item sm={12}>
+                        {(function () {
+                            let val = self.props.dragonPieces;
+                            if (val === null || val === 0) return null
+                            else if (val > 2) return 'All friendly dragons have 100 mana when battle starts.';
+                        })()}
+                    </Grid>
                     <Grid item sm={12}>element: {this.props.elementPieces}</Grid>
                     <Grid item sm={12}>elf: {this.props.elfPieces}</Grid>
                     <Grid item sm={12}>goblin: {this.props.goblinPieces}</Grid>
