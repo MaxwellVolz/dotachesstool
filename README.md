@@ -8,13 +8,11 @@ a tool for dota chess
 * Combolist species and class sections
 
 
-* Color species and class names in list items
 * Chess pieces area and sizing; fit in window
-* Current Squad area
+* Current Squad area and sizing; fit in window
 * Hover highlight connections
 * Toggle sorting by species / class
 
 # Recently done
 
-* Combolist pieces unique pieces THEN count 
-* Remove squad pieces on click
+* Color species and class names in list items

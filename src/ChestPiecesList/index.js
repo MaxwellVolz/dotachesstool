@@ -98,8 +98,12 @@ class SelectedListItem extends React.Component {
                                                     <ListItemText primary={piece.name} secondary={
                                                         <React.Fragment>
                                                             <Typography component="span" className={classes.inline} color="textPrimary">
-                                                                <span className={piece.class.toLowerCase().replace(/\s+/g, '')}>{piece.class}</span>
-                                                                <span> {piece.species.length > 1 ? piece.species.join(" ") : piece.species}</span>
+                                                                <span className={piece.class.toLowerCase().replace(/\s+/g, '')}>{piece.class} </span>
+
+                                                                {piece.species.map(function (species, s) {
+                                                                        return <span className={species.toLowerCase()} key={s}>{species} </span>
+                                                                    })
+                                                                }
                                                             </Typography>
                                                             {/* {' — Do you have Paris recommendations? Have you ever…'} */}
                                                         </React.Fragment>

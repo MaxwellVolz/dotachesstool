@@ -39,59 +39,59 @@
 }
 
 /* Species */
-/* .beast{
-  background-color:green !important;
+.beast{
+ color:green;
   order:1;
 }
 .dwarf{
-  background-color:brown !important;
+ color:brown;
   order:2;
 }
 .demon{
-  background-color:purple !important;
+ color:purple;
   order:3;
 }
 .dragon{
-  background: linear-gradient(to right, green 50%, #fff 50%);
-  background-color:green !important;
+  /* background: linear-gradient(to right, green 50%, #fff 50%); */
+ color:green;
   order:4;
 }
 .element{
-  background-color:yellow !important;
+ color:yellow;
   order:5;
 }
 .elf{
-  background-color:aquamarine !important;
+ color:aquamarine;
   order:6;
 }
 .goblin{
-  background-color:greenyellow !important;
+ color:greenyellow;
   order:7;
 }
 .human{
-  background-color:peachpuff !important;
+ color:peachpuff;
   order:8;
 }
 .naga{
-  background-color:fuchsia !important;
+ color:fuchsia;
   order:9;
 }
 .ogre{
-  background-color:blue !important;
+ color:blue;
   order:10;
 }
 .orc{
-  background-color:orange !important;
+ color:orange;
   order:11;
 }
 .troll{
-  background-color:lightgreen !important;
+ color:lightgreen;
   order:12;
 }
 .undead{
-  background-color:grey !important;
+ color:grey;
   order:13;
-} */
+}
 
 
 /* Classes */

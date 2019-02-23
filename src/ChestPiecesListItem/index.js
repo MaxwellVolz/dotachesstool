@@ -48,8 +48,14 @@ function ChessPieceListItem(props) {
             <ListItemText primary={props.item.name} secondary={
                 <React.Fragment>
                     <Typography component="span" className={classes.inline} color="textPrimary">
-                        <span className={props.item.class.toLowerCase()}>{props.item.class}</span>
-                        <span> {props.item.species.length > 1 ? props.item.species.join(" ") : props.item.species}</span>
+                        {/* Classes */}
+                        <span className={props.item.class.toLowerCase()}>{props.item.class} </span>
+                        {/* Species */}
+                        {props.item.species.map(function (species, s) {
+                                return <span className={species.toLowerCase()} key={s}>{species} </span>
+                            })
+                        }
+                        {/* <span> {props.item.species.length > 1 ? props.item.species.join(" ") : props.item.species}</span> */}
                     </Typography>
                     {/* {' — Do you have Paris recommendations? Have you ever…'} */}
                 </React.Fragment>
