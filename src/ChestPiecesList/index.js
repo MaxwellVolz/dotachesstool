@@ -64,7 +64,7 @@ class SelectedListItem extends React.Component {
         return (
             <div className={classes.root}>
 
-                <Grid container spacing={12}>
+                <Grid container spacing={8}>
 
 
                     {
@@ -72,7 +72,7 @@ class SelectedListItem extends React.Component {
                         uniqueClasses.map(function (item, i) {
 
                             return (
-                                <Grid item sm={6} md={4} lg={3} xl={2} key={i} spacing={8}>
+                                <Grid item sm={6} md={4} lg={3} xl={2} key={i}>
 
                                     <List
 

@@ -62,7 +62,6 @@ class SelectedListItem extends React.Component {
                 <Grid container spacing={24}>
 
                     <Grid item sm={12}>
-
                         {(function () {
                             let val = self.props.beastPieces;
                             
@@ -71,7 +70,6 @@ class SelectedListItem extends React.Component {
                             else if (val > 3) return 'Attack damage increased by 25% for all allies.';
                             else if (val > 1) return 'Attack damage increased by 10% for all allies.';
                         })()}
-
                     </Grid>
                     <Grid item sm={12}>
                         {(function () {

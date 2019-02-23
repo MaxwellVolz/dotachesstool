@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import AppBar from './AppBar';
 import ChessPieceButton from './ChessPieceButton'
 import ChessPiecesList from './ChestPiecesList'
+import ChessPiecesListItem from './ChestPiecesListItem'
 import ComboList from './ComboList'
 import chessPieces from './chessPieces'
 
@@ -109,11 +110,9 @@ function App(props) {
                 <Typography variant="h2" gutterBottom>
                   Current Squad
               </Typography>
+              <Grid container spacing={24} id="currentSquad">
 
-
-                <ChessPiecesList chesspieces={chessPieces} chessClicked={chessClicked} />
- 
-                 {
+                  {
                    pieces ?
                      pieces.map(function (item, i) {
                         // console.log(item);
@@ -121,32 +120,27 @@ function App(props) {
                        let species = item.species.join(" ") || item.species;
                         // let classes = item.classes.join(" ") || item.classes; 
 
-                       return <ChessPieceButton item={item} name={item.name} chessClicked={chessClicked} className={`${species.toLowerCase()} ${item.class.toLowerCase()}`} key={i} />
-
+              
+              return <Grid item xs={2}>
+                       <ChessPiecesListItem item={item} name={item.name} chessClicked={chessClicked} className={`${species.toLowerCase()} ${item.class.toLowerCase()}`} key={i} />
+                      </Grid>
                      })
                      : 'Select pieces below to add to your team'
                  }
-              </Grid>
+                </Grid>
+                 
 
-              <Grid item xs={12}>
 
                 <Typography variant="h2" gutterBottom>
                   Chess Pieces
               </Typography>
+
+                <ChessPiecesList chesspieces={chessPieces} chessClicked={chessClicked} />
+ 
+                 
               </Grid>
 
 
-              {
-                chessPieces.map(function (item, i) {
-                  // console.log(item); 
-
-                  let species = item.species.join(" ") || item.species;
-                  let classes = item.species.join(" ") || item.species; // unnecessary because each piece can only have 1 class
-
-                  return <ChessPieceButton item={item} name={item.name} chessClicked={chessClicked} className={`${species.toLowerCase()} ${classes.toLowerCase()}`} key={i} />
-
-                })
-              }
             </Grid>
 
 
