@@ -3,8 +3,8 @@ a tool for dota chess
 
 # To Do
 
-* Combolist pieces count unique
-* Combolist show icon of piece
+* Combolist pieces unique pieces THEN count 
+* Combolist show icon of pieces
 * Combolist species and class sections
 
 
@@ -14,5 +14,3 @@ a tool for dota chess
 * Hover highlight connections
 * Toggle sorting by species / class
 
-
-# Backlog
