@@ -62,7 +62,7 @@ class SelectedListItem extends React.Component {
                 <List
 
                     component="nav"
-                    subheader={<ListSubheader component="div">Hey</ListSubheader>}
+                    subheader={<ListSubheader component="div"></ListSubheader>}
                     className={classes.root}
                 >
                     {(function () {

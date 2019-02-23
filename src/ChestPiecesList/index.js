@@ -32,6 +32,9 @@ const styles = theme => ({
         margin: '20px auto 20px auto',
         alignItems: 'center'
     },
+    inline: {
+        fontSize: '0.9em'
+    }
 
 });
 
@@ -95,7 +98,8 @@ class SelectedListItem extends React.Component {
                                                     <ListItemText primary={piece.name} secondary={
                                                         <React.Fragment>
                                                             <Typography component="span" className={classes.inline} color="textPrimary">
-                                                                {piece.class} | {piece.species.length > 1 ? piece.species.join(" ") : piece.species}
+                                                                <span className={piece.class.toLowerCase().replace(/\s+/g, '')}>{piece.class}</span>
+                                                                <span> {piece.species.length > 1 ? piece.species.join(" ") : piece.species}</span>
                                                             </Typography>
                                                             {/* {' — Do you have Paris recommendations? Have you ever…'} */}
                                                         </React.Fragment>

@@ -20,6 +20,9 @@ const styles = theme => ({
     extendedIcon: {
         marginRight: theme.spacing.unit,
     },
+    inline: {
+        fontSize: '0.9em'
+    }
 });
 
 function ChessPieceListItem(props) {
@@ -45,7 +48,8 @@ function ChessPieceListItem(props) {
             <ListItemText primary={props.item.name} secondary={
                 <React.Fragment>
                     <Typography component="span" className={classes.inline} color="textPrimary">
-                        {props.item.class} | {props.item.species.length > 1 ? props.item.species.join(" ") : props.item.species}
+                        <span className={props.item.class.toLowerCase()}>{props.item.class}</span>
+                        <span> {props.item.species.length > 1 ? props.item.species.join(" ") : props.item.species}</span>
                     </Typography>
                     {/* {' — Do you have Paris recommendations? Have you ever…'} */}
                 </React.Fragment>

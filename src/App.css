@@ -39,7 +39,7 @@
 }
 
 /* Species */
-.beast{
+/* .beast{
   background-color:green !important;
   order:1;
 }
@@ -91,39 +91,39 @@
 .undead{
   background-color:grey !important;
   order:13;
-}
+} */
 
 
 /* Classes */
-/* 
-.assassin > div{
-  background-color:yellow;
+
+.assassin{
+  color:slategray;
 }
-.demonhunter > div{
-  background-color:purple;
+.demonhunter{
+  color:teal;
 }
-.druid > div{
-  background-color:orange;
+.druid{
+  color:orange;
 }
-.hunter > div{
-  background-color:lightgreen;
+.hunter{
+  color:forestgreen;
 }
-.knight > div{
-  background-color:pink;
+.knight{
+  color:pink;
 }
-.mage > div{
-  background-color:lightblue;
+.mage{
+  color:lightblue;
 }
-.mech > div{
-  background-color:brown;
+.mech{
+  color:brown;
 }
-.shaman > div{
-  background-color:blue;
+.shaman{
+  color:blue;
 }
-.warlock > div{
-  background-color:purple;
+.warlock{
+  color:purple;
 }
-.warrior > div{
-  background-color:red;
+.warrior{
+  color:red;
 } 
-*/
+

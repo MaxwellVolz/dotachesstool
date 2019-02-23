@@ -127,7 +127,7 @@ function App(props) {
                         // let classes = item.classes.join(" ") || item.classes; removeChessClicked
 
               
-              return <Grid item xs={2} key={i}>
+              return <Grid item xs={3} key={i}>
                        <ChessPiecesListItem item={item} itemIndex={i} name={item.name} chessClicked={removeChessClicked} className={`${species.toLowerCase()} ${item.class.toLowerCase()}`} key={i} />
                       </Grid>
                      })
