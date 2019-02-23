@@ -59,130 +59,330 @@ class SelectedListItem extends React.Component {
         return (
             <div className={classes.root}>
 
-                <Grid container spacing={24}>
+                <List
 
-                    <Grid item sm={12}>
-                        {(function () {
-                            let val = self.props.beastPieces;
-                            
-                            if (val === null || val === 0) return null
-                            else if (val > 5) return 'Attack damage increased by 45% for all allies.';
-                            else if (val > 3) return 'Attack damage increased by 25% for all allies.';
-                            else if (val > 1) return 'Attack damage increased by 10% for all allies.';
-                        })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    component="nav"
+                    subheader={<ListSubheader component="div">Hey</ListSubheader>}
+                    className={classes.root}
+                >
+                    {(function () {
+                        let val = self.props.beastPieces;
+
+                        if (val === null || val === 0) return null
+                        else if (val > 5) return (
+                            <ListItem
+                                dense
+                                key={'beast' + val}
+                                button
+                                // selected={this.state.selectedIndex === 0}
+                                // onClick={() => self.handleListItemClick(piece)}
+                            >
+                                Attack damage increased by 45% for all allies.
+                                </ListItem>
+
+
+                        );
+                        else if (val > 3) return (
+                            <ListItem
+                                dense
+                                key={'beast' + val}
+                                button
+                            >
+                                Attack damage increased by 25% for all allies.
+                                </ListItem>
+                        );
+                        else if (val > 1) return (
+                            <ListItem
+                                dense
+                                key={'beast' + val}
+                                button
+                            >
+                               Attack damage increased by 10% for all allies.
+                                </ListItem>
+                        );
+                    })()}
+
+              
+ 
                         {(function () {
                             let val = self.props.demonPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 0) return 'Fel Power';
+                            else if (val > 0) return  (
+                                <ListItem
+                                    dense
+                                    key={'demon' + val}
+                                    button
+                                >
+                                   Fel Power
+                                    </ListItem>
+                            )
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+
+                    
                         {(function () {
                             let val = self.props.dwarfPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 1) return 'Attack range increased by 300.';
+                            else if (val > 1) return (
+                                <ListItem
+                                    dense
+                                    key={'dwarf' + val}
+                                    button
+                                >
+                                  Attack range increased by 300.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
                         {(function () {
                             let val = self.props.dragonPieces;
-                            
+
                             if (val === null || val === 0) return null
-                            else if (val > 2) return 'All friendly dragons have 100 mana when battle starts.';
+                            else if (val > 2) return (
+                                <ListItem
+                                    dense
+                                    key={'dragon' + val}
+                                    button
+                                >
+                                  All friendly dragons have 100 mana when battle starts.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
                         {(function () {
                             let val = self.props.elementPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 3) return 'All allies have 30% chance to turn attacker into stone for 4s when attacked by melee chesses.';
-                            else if (val > 1) return 'All friendly elements have 30% chance to turn attacker into stone for 4s when attacked by melee chesses.';
+                            else if (val > 3) return (
+                                <ListItem
+                                    dense
+                                    key={'element' + val}
+                                    button
+                                >
+                                   All allies have 30% chance to turn attacker into stone for 4s when attacked by melee chesses.
+                                    </ListItem>
+                            );
+                            else if (val > 1) return (
+                                <ListItem
+                                    dense
+                                    key={'element' + val}
+                                    button
+                                >
+                                  All friendly elements have 30% chance to turn attacker into stone for 4s when attacked by melee chesses.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
                         {(function () {
                             let val = self.props.elfPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 5) return 'Evasion increased by an additional 25% for all friendly elves.';
-                            else if (val > 2) return 'Evasion increased by 25% for all friendly elves.';
+                            else if (val > 5) return (
+                                <ListItem
+                                    dense
+                                    key={'elf' + val}
+                                    button
+                                >
+                                  Evasion increased by an additional 25% for all friendly elves.
+                                    </ListItem>
+                            );
+                            else if (val > 2) return (
+                                <ListItem
+                                    dense
+                                    key={'elf' + val}
+                                    button
+                                >
+                                 Evasion increased by 25% for all friendly elves.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
                         {(function () {
                             let val = self.props.goblinPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 5) return 'Armor and hp regeneration increased by 15 for all friendly goblins.';
-                            else if (val > 2) return 'Armor and hp regeneration increased by 15 for a random ally.';
+                            else if (val > 5) return (
+                                <ListItem
+                                    dense
+                                    key={'goblin' + val}
+                                    button
+                                >
+                                   Armor and hp regeneration increased by 15 for all friendly goblins.
+                                    </ListItem>
+                            );
+                            else if (val > 2) return (
+                                <ListItem
+                                    dense
+                                    key={'goblin' + val}
+                                    button
+                                >
+                                   Armor and hp regeneration increased by 15 for a random ally.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
                         {(function () {
                             let val = self.props.humanPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 5) return 'All friendly humans have 30% chance to silence target for 4s on damage deal.';
-                            else if (val > 3) return 'All friendly humans have 25% chance to silence target for 4s on damage deal.';
-                            else if (val > 1) return 'All friendly humans have 20% chance to silence target for 4s on damage deal.';
+                            else if (val > 5) return (
+                                <ListItem
+                                    dense
+                                    key={'human' + val}
+                                    button
+                                >
+                                   All friendly humans have 30% chance to silence target for 4s on damage deal.
+                                    </ListItem>
+                            );
+                            else if (val > 3) return (
+                                <ListItem
+                                    dense
+                                    key={'human' + val}
+                                    button
+                                >
+                                  All friendly humans have 25% chance to silence target for 4s on damage deal.
+                                    </ListItem>
+                            );
+                            else if (val > 1) return (
+                                <ListItem
+                                    dense
+                                    key={'human' + val}
+                                    button
+                                >
+                                   All friendly humans have 20% chance to silence target for 4s on damage deal.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
                         {(function () {
                             let val = self.props.nagaPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 3) return 'Magic resistance increased by 60 for all allies.';
-                            else if (val > 1) return 'Magic resistance increased by 20 for all allies.';
+                            else if (val > 3) return (
+                                <ListItem
+                                    dense
+                                    key={'naga' + val}
+                                    button
+                                >
+                                   Magic resistance increased by 60 for all allies.
+                                    </ListItem>
+                            );
+                            else if (val > 1) return (
+                                <ListItem
+                                    dense
+                                    key={'naga' + val}
+                                    button
+                                >
+                                   Magic resistance increased by 20 for all allies.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
                         {(function () {
                             let val = self.props.ogrePieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 0) return 'Ogre max hp increased by 5% per head.';
+                            else if (val > 0) return (
+                                <ListItem
+                                    dense
+                                    key={'ogre' + val}
+                                    button
+                                >
+                                  Ogre max hp increased by 5% per head.
+                                    </ListItem>
+                            );
                         })()}
 
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
 
                         {(function () {
                             let val = self.props.orcPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 3) return 'Max HP increased by 600 for all friendly orcs.';
-                            else if (val > 1) return 'Max HP increased by 250 for all friendly orcs.';
+                            else if (val > 3) return (
+                                <ListItem
+                                    dense
+                                    key={'orc' + val}
+                                    button
+                                >
+                                  Max HP increased by 600 for all friendly orcs.
+                                    </ListItem>
+                            );
+                            else if (val > 1) return (
+                                <ListItem
+                                    dense
+                                    key={'orc' + val}
+                                    button
+                                >
+                                  Max HP increased by 250 for all friendly orcs.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
 
                         {(function () {
                             let val = self.props.trollPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 3) return 'Attack speed increased by 35 for all friendly units, and another 35 for all friendly trolls.';
-                            else if (val > 1) return 'Attack speed increased by 35 for all friendly trolls.';
+                            else if (val > 3) return (
+                                <ListItem
+                                    dense
+                                    key={'troll' + val}
+                                    button
+                                >
+                                  Attack speed increased by 35 for all friendly units, and another 35 for all friendly trolls.
+                                    </ListItem>
+                            );
+                            else if (val > 1) return (
+                                <ListItem
+                                    dense
+                                    key={'troll' + val}
+                                    button
+                                >
+                                  Attack speed increased by 35 for all friendly trolls.
+                                    </ListItem>
+                            );
                         })()}
-                    </Grid>
-                    <Grid item sm={12}>
+                    
+                    
 
                         {(function () {
                             let val = self.props.undeadPieces;
 
                             if (val === null || val === 0) return null
-                            else if (val > 3) return 'Armor decreased by 12 for all enemies';
-                            else if (val > 1) return 'Armor decreased by 5 for all enemies';
+                            else if (val > 3) return (
+                                <ListItem
+                                    dense
+                                    key={'undead' + val}
+                                    button
+                                >
+                                  Armor decreased by 12 for all enemies.
+                                    </ListItem>
+                            );
+                            else if (val > 1) return (
+                                <ListItem
+                                    dense
+                                    key={'undead' + val}
+                                    button
+                                >
+                                  Armor decreased by 5 for all enemies.
+                                    </ListItem>
+                            );
                         })()}
 
-                    </Grid>
+                    
 
-                </Grid>
+                </List>
                 {/* <Divider />
         <List component="nav">
           <ListItem

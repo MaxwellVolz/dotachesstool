@@ -52,7 +52,7 @@ function App(props) {
   useEffect(() => {
     document.title = pieces.length;
 
-    if (pieces) checkSpecies(pieces);
+    if (pieces) checkSpecies([...new Set(pieces)]);
     // console.log(pieces);
 
     console.log(beastPieces)
@@ -66,11 +66,17 @@ function App(props) {
     setPieces([...pieces, item]);
   }
 
+  function removeChessClicked(item,i) {
+
+    pieces.splice(i-1,1)
+
+    setPieces([...pieces]);
+  }
+
   function checkSpecies(pieces) {
     console.log(pieces);
 
 
-    console.log(pieces.filter(x => x.species.find((x) => x === 'Beast')).length)
 
     setBeastPieces(pieces.filter(x => x.species.find((x) => x === 'Beast')).length);
     setDemonPieces(pieces.filter(x => x.species.find((x) => x === 'Demon')).length);
@@ -118,11 +124,11 @@ function App(props) {
                         // console.log(item);
 
                        let species = item.species.join(" ") || item.species;
-                        // let classes = item.classes.join(" ") || item.classes; 
+                        // let classes = item.classes.join(" ") || item.classes; removeChessClicked
 
               
-              return <Grid item xs={2}>
-                       <ChessPiecesListItem item={item} name={item.name} chessClicked={chessClicked} className={`${species.toLowerCase()} ${item.class.toLowerCase()}`} key={i} />
+              return <Grid item xs={2} key={i}>
+                       <ChessPiecesListItem item={item} itemIndex={i} name={item.name} chessClicked={removeChessClicked} className={`${species.toLowerCase()} ${item.class.toLowerCase()}`} key={i} />
                       </Grid>
                      })
                      : 'Select pieces below to add to your team'
@@ -153,7 +159,6 @@ function App(props) {
               </Typography>
 
               <ComboList 
-                beastPieces={beastPieces}
                 beastPieces={beastPieces}
                 demonPieces={demonPieces}
                 dwarfPieces={dwarfPieces}

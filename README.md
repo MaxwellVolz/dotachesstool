@@ -3,7 +3,7 @@ a tool for dota chess
 
 # To Do
 
-* Combolist pieces unique pieces THEN count 
+
 * Combolist show icon of pieces
 * Combolist species and class sections
 
@@ -14,3 +14,7 @@ a tool for dota chess
 * Hover highlight connections
 * Toggle sorting by species / class
 
+# Recently done
+
+* Combolist pieces unique pieces THEN count 
+* Remove squad pieces on click

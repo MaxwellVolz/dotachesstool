@@ -37,7 +37,7 @@ function ChessPieceListItem(props) {
             button
             className={multiclass}
             // selected={this.state.selectedIndex === 0}
-            onClick={() => props.chessClicked(props.item)}
+            onClick={() => props.chessClicked(props.item, props.itemIndex)}
         >
             <ListItemIcon>
                 <img src={require(`./heroes/${props.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${props.name.toLowerCase()}Icon`} />
