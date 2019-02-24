@@ -30,8 +30,6 @@ function ChessPieceListItem(props) {
 
     let multiclass = classes.fab + " " + props.className;
 
-
-
     return (
 
         <ListItem
@@ -49,7 +47,12 @@ function ChessPieceListItem(props) {
                 <React.Fragment>
                     <Typography component="span" className={classes.inline} color="textPrimary">
                         {/* Classes */}
-                        <span className={props.item.class.toLowerCase()}>{props.item.class} </span>
+                        {/* <span className={props.item.class.toLowerCase()}>{props.item.class} </span> */}
+
+                        {props.item.class.map(function (classes, s) {
+                                return <span className={classes.toLowerCase()} key={s}>{classes} </span>
+                            })
+                        }
                         {/* Species */}
                         {props.item.species.map(function (species, s) {
                                 return <span className={species.toLowerCase()} key={s}>{species} </span>

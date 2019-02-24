@@ -16,6 +16,8 @@ import ChessPiecesListItem from './ChestPiecesListItem'
 import ComboList from './ComboList'
 import chessPieces from './chessPieces'
 
+import Button from '@material-ui/core/Button';
+
 
 const styles = theme => ({
   root: {
@@ -28,6 +30,12 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     color: theme.palette.text.secondary,
+  },
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
   },
 });
 
@@ -49,13 +57,24 @@ function App(props) {
   const [trollPieces, setTrollPieces] = useState(0);
   const [undeadPieces, setUndeadPieces] = useState(0);
 
+  const [assassinPieces, setAssassinPieces] = useState(0);
+  const [demonhunterPieces, setDemonhunterPieces] = useState(0);
+  const [druidPieces, setDruidPieces] = useState(0);
+  const [hunterPieces, setHunterPieces] = useState(0);
+  const [knightPieces, setKnightPieces] = useState(0);
+  const [magePieces, setMagePieces] = useState(0);
+  const [mechPieces, setMechPieces] = useState(0);
+  const [shamanPieces, setShamanPieces] = useState(0);
+  const [warlockPieces, setWarlockPieces] = useState(0);
+  const [warriorPieces, setWarriorPieces] = useState(0);
+
+  const [sortClass, setSortClass] = useState(false);
+
   useEffect(() => {
     document.title = pieces.length;
 
     if (pieces) checkSpecies([...new Set(pieces)]);
     // console.log(pieces);
-
-    console.log(beastPieces)
   })
 
 
@@ -76,8 +95,7 @@ function App(props) {
   function checkSpecies(pieces) {
     console.log(pieces);
 
-
-
+    // Species
     setBeastPieces(pieces.filter(x => x.species.find((x) => x === 'Beast')).length);
     setDemonPieces(pieces.filter(x => x.species.find((x) => x === 'Demon')).length);
     setDwarfPieces(pieces.filter(x => x.species.find((x) => x === 'Dwarf')).length);
@@ -92,6 +110,17 @@ function App(props) {
     setTrollPieces(pieces.filter(x => x.species.find((x) => x === 'Troll')).length);
     setUndeadPieces(pieces.filter(x => x.species.find((x) => x === 'Undead')).length);
 
+    // Classes
+    setAssassinPieces(pieces.filter(x => x.class.find((x) => x === 'Assassin')).length);
+    setDemonhunterPieces(pieces.filter(x => x.class.find((x) => x === 'Demonhunter')).length);
+    setDruidPieces(pieces.filter(x => x.class.find((x) => x === 'Druid')).length);
+    setHunterPieces(pieces.filter(x => x.class.find((x) => x === 'Hunter')).length);
+    setKnightPieces(pieces.filter(x => x.class.find((x) => x === 'Knight')).length);
+    setMagePieces(pieces.filter(x => x.class.find((x) => x === 'Mage')).length);
+    setMechPieces(pieces.filter(x => x.class.find((x) => x === 'Mech')).length);
+    setShamanPieces(pieces.filter(x => x.class.find((x) => x === 'Shaman')).length);
+    setWarlockPieces(pieces.filter(x => x.class.find((x) => x === 'Warlock')).length);
+    setWarriorPieces(pieces.filter(x => x.class.find((x) => x === 'Warrior')).length);
 
     // pieces.map(function (item, i) {
 
@@ -99,6 +128,14 @@ function App(props) {
 
     //   }
     // }
+  }
+
+  function toggleSort (e) {
+    console.log(e);
+
+    setSortClass(!sortClass);
+
+
   }
 
 
@@ -124,11 +161,12 @@ function App(props) {
                         // console.log(item);
 
                        let species = item.species.join(" ") || item.species;
+                       let classes = item.class.join(" ") || item.class;
                         // let classes = item.classes.join(" ") || item.classes; removeChessClicked
 
               
               return <Grid item xs={3} key={i}>
-                       <ChessPiecesListItem item={item} itemIndex={i} name={item.name} chessClicked={removeChessClicked} className={`${species.toLowerCase()} ${item.class.toLowerCase()}`} key={i} />
+                       <ChessPiecesListItem item={item} itemIndex={i} name={item.name} chessClicked={removeChessClicked} className={`${species.toLowerCase()} ${classes.toLowerCase()}`} key={i} />
                       </Grid>
                      })
                      : 'Select pieces below to add to your team'
@@ -139,9 +177,12 @@ function App(props) {
 
                 <Typography variant="h2" gutterBottom>
                   Chess Pieces
-              </Typography>
+                  <Button variant="contained" className={classes.button} onClick={toggleSort}>
+                    Re-sort
+                  </Button>
+                </Typography>
 
-                <ChessPiecesList chesspieces={chessPieces} chessClicked={chessClicked} />
+                <ChessPiecesList chesspieces={chessPieces} chessClicked={chessClicked} sortClass={sortClass}/>
  
                  
               </Grid>
@@ -156,6 +197,7 @@ function App(props) {
 
             <Typography variant="h2" gutterBottom>
               Combo List
+
               </Typography>
 
               <ComboList 
@@ -172,7 +214,17 @@ function App(props) {
                 orcPieces={orcPieces}
                 trollPieces={trollPieces}
                 undeadPieces={undeadPieces}
-                
+
+                assassinPieces={assassinPieces}
+                demonhunterPieces={demonhunterPieces}
+                druidPieces={druidPieces}
+                hunterPieces={hunterPieces}
+                knightPieces={knightPieces}
+                magePieces={magePieces}
+                mechPieces={mechPieces}
+                shamanPieces={shamanPieces}
+                warlockPieces={warlockPieces}
+                warriorPieces={warriorPieces}
                 />
 
           </Grid>
