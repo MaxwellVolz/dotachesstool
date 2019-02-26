@@ -112,7 +112,7 @@ function App(props) {
 
     // Classes
     setAssassinPieces(pieces.filter(x => x.class.find((x) => x === 'Assassin')).length);
-    setDemonhunterPieces(pieces.filter(x => x.class.find((x) => x === 'Demonhunter')).length);
+    setDemonhunterPieces(pieces.filter(x => x.class.find((x) => x === 'Demon Hunter')).length);
     setDruidPieces(pieces.filter(x => x.class.find((x) => x === 'Druid')).length);
     setHunterPieces(pieces.filter(x => x.class.find((x) => x === 'Hunter')).length);
     setKnightPieces(pieces.filter(x => x.class.find((x) => x === 'Knight')).length);
@@ -122,12 +122,6 @@ function App(props) {
     setWarlockPieces(pieces.filter(x => x.class.find((x) => x === 'Warlock')).length);
     setWarriorPieces(pieces.filter(x => x.class.find((x) => x === 'Warrior')).length);
 
-    // pieces.map(function (item, i) {
-
-    //   switch(item.species){
-
-    //   }
-    // }
   }
 
   function toggleSort (e) {
