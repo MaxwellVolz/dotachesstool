@@ -247,24 +247,24 @@ class SelectedListItem extends React.Component {
 
                             {(druidPieces > 1 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="2"/>
+                                    <ListItemText secondary="2" />
                                     <ListItemText inset secondary="Two ★ druids can upgrade to a ★★druid" />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="2"/>
+                                    <ListItemText secondary="2" />
                                     <ListItemText inset secondary="Two ★ druids can upgrade to a ★★druid" />
                                 </ListItem>
                             )}
 
                             {(druidPieces > 3 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="4"/>
+                                    <ListItemText secondary="4" />
                                     <ListItemText inset secondary="Two ★★ druids can upgrade to a ★★★ druid." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="4"/>
+                                    <ListItemText secondary="4" />
                                     <ListItemText inset secondary="Two ★★ druids can upgrade to a ★★★ druid." />
                                 </ListItem>
                             )}
@@ -283,24 +283,24 @@ class SelectedListItem extends React.Component {
 
                             {(hunterPieces > 2 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="3"/>
+                                    <ListItemText secondary="3" />
                                     <ListItemText inset secondary="Attack damage increased by 25% for all friendly hunters." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="3"/>
+                                    <ListItemText secondary="3" />
                                     <ListItemText inset secondary="Attack damage increased by 25% for all friendly hunters." />
                                 </ListItem>
                             )}
 
                             {(hunterPieces > 5 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="Attack damage increased by 35% for all friendly hunters." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="Attack damage increased by 35% for all friendly hunters." />
                                 </ListItem>
                             )}
@@ -319,37 +319,37 @@ class SelectedListItem extends React.Component {
 
                             {(knightPieces > 1 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="2"/>
+                                    <ListItemText secondary="2" />
                                     <ListItemText inset secondary="All friendly knights +25% chance to get a shield." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="2"/>
+                                    <ListItemText secondary="2" />
                                     <ListItemText inset secondary="All friendly knights +25% chance to get a shield." />
                                 </ListItem>
                             )}
 
-                            
+
                             {(knightPieces > 3 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="4"/>
+                                    <ListItemText secondary="4" />
                                     <ListItemText inset secondary="All friendly knights +35% chance to get a shield." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="4"/>
+                                    <ListItemText secondary="4" />
                                     <ListItemText inset secondary="All friendly knights +35% chance to get a shield." />
                                 </ListItem>
-                            )}      
+                            )}
 
                             {(knightPieces > 5 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="All friendly knights +45% chance to get a shield." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="All friendly knights +45% chance to get a shield." />
                                 </ListItem>
                             )}
@@ -368,24 +368,24 @@ class SelectedListItem extends React.Component {
 
                             {(magePieces > 2 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="3"/>
+                                    <ListItemText secondary="3" />
                                     <ListItemText inset secondary="Magic resistance decreased by 40% for all enemies." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="3"/>
+                                    <ListItemText secondary="3" />
                                     <ListItemText inset secondary="Magic resistance decreased by 40% for all enemies." />
                                 </ListItem>
-                            )}      
+                            )}
 
                             {(magePieces > 5 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="Magic resistance decreased by 40% for all enemies." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="Magic resistance decreased by 40% for all enemies." />
                                 </ListItem>
                             )}
@@ -404,24 +404,24 @@ class SelectedListItem extends React.Component {
 
                             {(mechPieces > 1 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="2"/>
+                                    <ListItemText secondary="2" />
                                     <ListItemText inset secondary="HP regeneration increased by 15 for all friendly mechs." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="2"/>
+                                    <ListItemText secondary="2" />
                                     <ListItemText inset secondary="HP regeneration increased by 15 for all friendly mechs." />
                                 </ListItem>
-                            )}      
+                            )}
 
                             {(mechPieces > 3 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="4"/>
+                                    <ListItemText secondary="4" />
                                     <ListItemText inset secondary="HP regeneration increased by 25 for all friendly mechs." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="4"/>
+                                    <ListItemText secondary="4" />
                                     <ListItemText inset secondary="HP regeneration increased by 25 for all friendly mechs." />
                                 </ListItem>
                             )}
@@ -440,17 +440,17 @@ class SelectedListItem extends React.Component {
 
                             {(shamanPieces > 1 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="2"/>
+                                    <ListItemText secondary="2" />
                                     <ListItemText inset secondary="Hex an enemy when battle starts." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="2"/>
+                                    <ListItemText secondary="2" />
                                     <ListItemText inset secondary="Hex an enemy when battle starts." />
                                 </ListItem>
-                            )}      
+                            )}
 
-                           
+
                         </List>
                     </Collapse>
 
@@ -465,28 +465,28 @@ class SelectedListItem extends React.Component {
 
                             {(warlockPieces > 2 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="3"/>
+                                    <ListItemText secondary="3" />
                                     <ListItemText inset secondary="Lifesteal increased by 20% for all allies." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="3"/>
+                                    <ListItemText secondary="3" />
                                     <ListItemText inset secondary="Lifesteal increased by 20% for all allies." />
                                 </ListItem>
-                            )}      
-                             {(warlockPieces > 5 ?
+                            )}
+                            {(warlockPieces > 5 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="Lifesteal increased by 30% for all allies." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="Lifesteal increased by 30% for all allies." />
                                 </ListItem>
-                            )}      
+                            )}
 
-                           
+
                         </List>
                     </Collapse>
 
@@ -501,39 +501,39 @@ class SelectedListItem extends React.Component {
 
                             {(warriorPieces > 2 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="3"/>
+                                    <ListItemText secondary="3" />
                                     <ListItemText inset secondary="Armor increased by 7 for all friendly warriors." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="3"/>
+                                    <ListItemText secondary="3" />
                                     <ListItemText inset secondary="Armor increased by 7 for all friendly warriors." />
                                 </ListItem>
-                            )}      
-                             {(warriorPieces > 5 ?
+                            )}
+                            {(warriorPieces > 5 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="Armor increased by 8 for all friendly warriors." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="6"/>
+                                    <ListItemText secondary="6" />
                                     <ListItemText inset secondary="Armor increased by 8 for all friendly warriors." />
                                 </ListItem>
-                            )}      
-                             {(warriorPieces > 8 ?
+                            )}
+                            {(warriorPieces > 8 ?
                                 <ListItem button className={classes.nested} selected>
-                                    <ListItemText secondary="9"/>
+                                    <ListItemText secondary="9" />
                                     <ListItemText inset secondary="Armor increased by 9 for all friendly warriors." />
                                 </ListItem>
                                 :
                                 <ListItem button className={classes.nested}>
-                                    <ListItemText secondary="9"/>
+                                    <ListItemText secondary="9" />
                                     <ListItemText inset secondary="Armor increased by 9 for all friendly warriors." />
                                 </ListItem>
-                            )}      
+                            )}
 
-                           
+
                         </List>
                     </Collapse>
 
@@ -547,6 +547,84 @@ class SelectedListItem extends React.Component {
                     subheader={<ListSubheader component="div"></ListSubheader>}
                     className={classes.root}
                 >
+                 <ListItem button onClick={() => this.handleClick('assassinOpen', !this.state['assassinOpen'])} >
+                        <ListItemText>{assassinPieces}</ListItemText>
+                        <ListItemText inset primary="Assassins" />
+                        {this.state.assassinOpen ? <ExpandLess /> : <ExpandMore />}
+                    </ListItem>
+
+                    <Collapse in={this.state.assassinOpen} timeout="auto" unmountOnExit>
+                        <List component="div" disablePadding>
+
+                            {(assassinPieces > 2 ?
+                                <ListItem button className={classes.nested} selected>
+                                    <ListItemText secondary="3" />
+                                    <ListItemText inset secondary="All friendly assassins have 10% chance to deal 3.5x damage." />
+                                </ListItem>
+                                :
+                                <ListItem button className={classes.nested}>
+                                    <ListItemText secondary="3" />
+                                    <ListItemText inset secondary="All friendly assassins have 10% chance to deal 3.5x damage." />
+                                </ListItem>
+                            )}
+
+                            {(assassinPieces > 5 ?
+                                <ListItem button className={classes.nested} selected>
+                                    <ListItemText secondary="6" />
+                                    <ListItemText inset secondary="All friendly assassins have 20% chance to deal 4.5x damage." />
+                                </ListItem>
+                                :
+                                <ListItem button className={classes.nested}>
+                                    <ListItemText secondary="6" />
+                                    <ListItemText inset secondary="All friendly assassins have 20% chance to deal 4.5x damage." />
+                                </ListItem>
+                            )}
+
+                        </List>
+                    </Collapse>
+                    
+
+                    <Collapse in={this.state.warriorOpen} timeout="auto" unmountOnExit>
+                        <List component="div" disablePadding>
+
+                            {(warriorPieces > 2 ?
+                                <ListItem button className={classes.nested} selected>
+                                    <ListItemText secondary="3" />
+                                    <ListItemText inset secondary="Attack damage increased by 10% for all allies." />
+                                </ListItem>
+                                :
+                                <ListItem button className={classes.nested}>
+                                    <ListItemText secondary="3" />
+                                    <ListItemText inset secondary="Attack damage increased by 10% for all allies." />
+                                </ListItem>
+                            )}
+                            {(warriorPieces > 5 ?
+                                <ListItem button className={classes.nested} selected>
+                                    <ListItemText secondary="6" />
+                                    <ListItemText inset secondary="Attack damage increased by an additional 15% for all allies." />
+                                </ListItem>
+                                :
+                                <ListItem button className={classes.nested}>
+                                    <ListItemText secondary="6" />
+                                    <ListItemText inset secondary="Attack damage increased by an additional 15% for all allies." />
+                                </ListItem>
+                            )}
+                            {(warriorPieces > 8 ?
+                                <ListItem button className={classes.nested} selected>
+                                    <ListItemText secondary="9" />
+                                    <ListItemText inset secondary="Attack damage increased by an additional 20% for all allies." />
+                                </ListItem>
+                                :
+                                <ListItem button className={classes.nested}>
+                                    <ListItemText secondary="9" />
+                                    <ListItemText inset secondary="Attack damage increased by an additional 20% for all allies." />
+                                </ListItem>
+                            )}
+
+
+                        </List>
+                    </Collapse>
+
                     {(function () {
                         let val = self.props.beastPieces;
 

@@ -79,6 +79,7 @@
         "class": ["Mech"],
         "cost": 1
     },
+    
     {
         "name": "Anti Mage",
         "species": ["Elf"],
@@ -437,6 +438,30 @@
         "sortSpecies": "Goblin",
         "sortClass": "Mech",
         "class": ["Mech"],
+        "cost": 5
+    },
+    {
+        "name": "Mirana",
+        "species": ["Elf"],
+        "sortSpecies": "Elf",
+        "sortClass": "Hunter",
+        "class": ["Hunter"],
+        "cost": 3
+    },
+    {
+        "name": "Riki",
+        "species": ["Satyr"],
+        "sortSpecies": "Satyr",
+        "sortClass": "Hunter",
+        "class": ["Hunter"],
+        "cost": 3
+    },
+    {
+        "name": "Death Prophet",
+        "species": ["Undead"],
+        "sortSpecies": "Undead",
+        "sortClass": "Warlock",
+        "class": ["Warlock"],
         "cost": 5
     }
 ]
