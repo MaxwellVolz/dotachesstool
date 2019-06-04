@@ -1,7 +1,8 @@
 .App {
   text-align: center;
-  /* width:90vw; */
-  /* margin: 0 auto 0 auto */
+  min-height: 100vh;
+  background-color: #282c34;
+
 }
 
 .App-logo {
@@ -12,7 +13,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,10 +25,6 @@
   color: #61dafb;
 }
 
-#currentSquad{
-  min-height:300px
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,91 +34,156 @@
   }
 }
 
+#combosTable{
+  
+}
+
+#mainContent{
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin-left:8px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  /* width:50%; */
+}
+
+#mainContent>div,table{
+  background-color:#13191a;
+
+}
+tr{
+  height:20px;
+  /* width:32vw; */
+  background-color:#13191a;
+  cursor: cell;
+
+}
+th,th>span{
+  color: #bbbbbb !important;
+}
+
+.pieceCost{
+  color: #bbbbbb !important;
+}
+
+tr>th, tr>td{
+  text-align:left;
+  border-bottom: 1px solid #333 !important;
+}
+tr>th:last-child, tr>td:last-child{
+  text-align:right;
+  padding: 0;
+}
+tr>td:first-child{
+  padding: 0;
+}
+
+
+.pieceIcon{
+  max-width:40px !important;
+}
+
+#currentTeamTable > tbody > tr,#currentTeamTable > tbody > tr{
+  
+  cursor: no-drop;
+
+}
+
+
 /* Species */
 .beast{
- color:green;
-  order:1;
+   color:green !important;
+   order:1;
+ }
+ .dwarf{
+  color:brown !important;
+   order:2;
+ }
+ .demon{
+  color:purple !important;
+   order:3;
+ }
+ .dragon{
+  color:green !important;
+   order:4;
+ }
+ .element{
+  color:yellow !important;
+   order:5;
+ }
+ .elf{
+  color:aquamarine !important;
+   order:6;
+ }
+ .goblin{
+  color:greenyellow !important;
+   order:7;
+ }
+ .human{
+  color:peachpuff !important;
+   order:8;
+ }
+ .naga{
+  color:fuchsia !important;
+   order:9;
+ }
+ .ogre{
+  color:blue !important;
+   order:10;
+ }
+ .orc{
+  color:orange !important;
+   order:11;
+ }
+ .troll{
+  color:lightgreen !important;
+   order:12;
+ }
+ .undead{
+  color:grey !important;
+   order:13;
+ }
+ .god{
+   color: white !important;
+ }
+ 
+ 
+ /* Classes */
+ 
+ .assassin{
+   color:slategray !important;
+ }
+ .demonhunter{
+   color:teal !important;
+ }
+ .druid{
+   color:orange !important;
+ }
+ .hunter{
+   color:forestgreen !important;
+ }
+ .knight{
+   color:pink !important;
+ }
+ .mage{
+   color:lightblue !important;
+ }
+ .mech{
+   color:brown !important;
+ }
+ .shaman{
+   color:blue !important;
+ }
+ .warlock{
+   color:purple !important;
+ }
+ .warrior{
+   color:red !important;
+ } 
+ .priest{
+  color:gold !important;
 }
-.dwarf{
- color:brown;
-  order:2;
-}
-.demon{
- color:purple;
-  order:3;
-}
-.dragon{
- color:green;
-  order:4;
-}
-.element{
- color:yellow;
-  order:5;
-}
-.elf{
- color:aquamarine;
-  order:6;
-}
-.goblin{
- color:greenyellow;
-  order:7;
-}
-.human{
- color:peachpuff;
-  order:8;
-}
-.naga{
- color:fuchsia;
-  order:9;
-}
-.ogre{
- color:blue;
-  order:10;
-}
-.orc{
- color:orange;
-  order:11;
-}
-.troll{
- color:lightgreen;
-  order:12;
-}
-.undead{
- color:grey;
-  order:13;
-}
-
-
-/* Classes */
-
-.assassin{
-  color:slategray;
-}
-.demonhunter{
-  color:teal;
-}
-.druid{
-  color:orange;
-}
-.hunter{
-  color:forestgreen;
-}
-.knight{
-  color:pink;
-}
-.mage{
-  color:lightblue;
-}
-.mech{
-  color:brown;
-}
-.shaman{
-  color:blue;
-}
-.warlock{
-  color:purple;
-}
-.warrior{
-  color:red;
-} 
-
+ 
+ 

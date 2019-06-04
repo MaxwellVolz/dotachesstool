@@ -2,466 +2,422 @@
     {
         "name": "Axe",
         "species": ["Orc"],
-        "sortSpecies": "Orc",
-        "sortClass": "Warrior",
         "class": ["Warrior"],
-        "cost": 1
+        "cost": 1,
+        "id": 1
     },
     {
         "name": "Enchantress",
         "species": ["Beast"],
-        "sortSpecies": "Beast",
-        "sortClass": "Druid",
         "class": ["Druid"],
-        "cost": 1
-    },
-    {
-        "name": "Ogre Magi",
-        "species": ["Ogre"],
-        "sortSpecies": "Ogre",
-        "sortClass": "Mage",
-        "class": ["Mage"],
-        "cost": 1
+        "cost": 1,
+        "id": 2
     },
     {
         "name": "Tusk",
         "species": ["Beast"],
-        "sortSpecies": "Beast",
-        "sortClass": "Warrior",
         "class": ["Warrior"],
-        "cost": 1
+        "cost": 1,
+        "id": 4
     },
     {
         "name": "Drow Ranger",
         "species": ["Undead"],
-        "sortSpecies": "Undead",
-        "sortClass": "Hunter",
         "class": ["Hunter"],
-        "cost": 1
+        "cost": 1,
+        "id": 5
     },
     {
         "name": "Bounty Hunter",
         "species": ["Goblin"],
-        "sortSpecies": "Goblin",
-        "sortClass": "Assassin",
         "class": ["Assassin"],
-        "cost": 1
+        "cost": 1,
+        "id": 6
     },
     {
         "name": "Clockwerk",
         "species": ["Goblin"],
-        "sortSpecies": "Goblin",
-        "sortClass": "Mech",
         "class": ["Mech"],
-        "cost": 1
+        "cost": 1,
+        "id": 7
     },
     {
         "name": "Shadow Shaman",
         "species": ["Troll"],
-        "sortSpecies": "Troll",
-        "sortClass": "Shaman",
         "class": ["Shaman"],
-        "cost": 1
+        "cost": 1,
+        "id": 8
     },
     {
         "name": "Bat Rider",
         "species": ["Troll"],
-        "sortSpecies": "Troll",
-        "sortClass": "Knight",
         "class": ["Knight"],
-        "cost": 1
+        "cost": 1,
+        "id": 9
     },
     {
         "name": "Tinker",
         "species": ["Goblin"],
-        "sortSpecies": "Goblin",
-        "sortClass": "Mech",
         "class": ["Mech"],
-        "cost": 1
+        "cost": 1,
+        "id": 10
     },
-    
     {
         "name": "Anti Mage",
         "species": ["Elf"],
-        "sortSpecies": "Elf",
-        "sortClass": "Hunter",
         "class": ["Demon Hunter"],
-        "cost": 1
+        "cost": 1,
+        "id": 11
     },
     {
         "name": "Tiny",
         "species": ["Element"],
-        "sortSpecies": "Element",
-        "sortClass": "Warrior",
         "class": ["Warrior"],
-        "cost": 1
+        "cost": 1,
+        "id": 12
+    },
+    {
+        "name": "Mars",
+        "species": ["God"],
+        "class": ["Warrior"],
+        "cost": 1,
+        "id": 59
+    },
+    {
+        "name": "Winter Wyvern",
+        "species": ["Dragon"],
+        "class": ["Mage"],
+        "cost": 1,
+        "id": 63
     },
     {
         "name": "Crystal Maiden",
         "species": ["Human"],
-        "sortSpecies": "Human",
-        "sortClass": "Mage",
         "class": ["Mage"],
-        "cost": 2
+        "cost": 2,
+        "id": 13
     },
     {
-        "name": "Beast Master",
+        "name": "Beastmaster",
         "species": ["Orc"],
-        "sortSpecies": "Orc",
-        "sortClass": "Hunter",
         "class": ["Hunter"],
-        "cost": 2
+        "cost": 2,
+        "id": 14
     },
     {
         "name": "Juggernaut",
         "species": ["Orc"],
-        "sortSpecies": "Orc",
-        "sortClass": "Warrior",
         "class": ["Warrior"],
-        "cost": 2
+        "cost": 2,
+        "id": 15
     },
     {
         "name": "Timbersaw",
         "species": ["Goblin"],
-        "sortSpecies": "Goblin",
-        "sortClass": "Mech",
         "class": ["Mech"],
-        "cost": 2
+        "cost": 2,
+        "id": 16
     },
     {
         "name": "Queen of Pain",
         "species": ["Demon"],
-        "sortSpecies": "Demon",
-        "sortClass": "Assassin",
         "class": ["Assassin"],
-        "cost": 2
+        "cost": 2,
+        "id": 17
     },
     {
         "name": "Puck",
         "species": ["Elf","Dragon"],
-        "sortSpecies": "Dragon",
-        "sortClass": "Mage",
         "class": ["Mage"],
-        "cost": 2
+        "cost": 2,
+        "id": 18
     },
     {
         "name": "Witch Doctor",
         "species": ["Troll"],
-        "sortSpecies": "Troll",
-        "sortClass": "Warlock",
         "class": ["Warlock"],
-        "cost": 2
+        "cost": 2,
+        "id": 19
     },
     {
         "name": "Slardar",
         "species": ["Naga"],
-        "sortSpecies": "Naga",
-        "sortClass": "Warrior",
         "class": ["Warrior"],
-        "cost": 2
+        "cost": 2,
+        "id": 20
     },
     {
         "name": "Chaos Knight",
         "species": ["Demon"],
-        "sortSpecies": "Demon",
-        "sortClass": "Knight",
         "class": ["Knight"],
-        "cost": 2
-    },
-    {
-        "name": "Treant Protector",
-        "species": ["Elf"],
-        "sortSpecies": "Elf",
-        "sortClass": "Druid",
-        "class": ["Druid"],
-        "cost": 2
-    },
-    {
-        "name": "Morphling",
-        "species": ["Element"],
-        "sortSpecies": "Element",
-        "sortClass": "Assassin",
-        "class": ["Assassin"],
-        "cost": 2
+        "cost": 2,
+        "id": 21
     },
     {
         "name": "Luna",
         "species": ["Elf"],
-        "sortSpecies": "Elf",
-        "sortClass": "Knight",
         "class": ["Knight"],
-        "cost": 2
+        "cost": 2,
+        "id": 24
     },
     {
         "name": "Furion",
         "species": ["Elf"],
-        "sortSpecies": "Elf",
-        "sortClass": "Druid",
         "class": ["Druid"],
-        "cost": 2
+        "cost": 2,
+        "id": 25
     },
     {
-        "name": "Lycan",
-        "species": ["Human","Beast"],
-        "sortSpecies": "Beast",
-        "sortClass": "Warrior",
-        "class": ["Warrior"],
-        "cost": 3
-    },
-    {
-        "name": "Venomancer",
-        "species": ["Beast"],
-        "sortSpecies": "Beast",
-        "sortClass": "Warlock",
-        "class": ["Warlock"],
-        "cost": 3
-    },
-    {
-        "name": "Omni Knight",
-        "species": ["Human"],
-        "sortSpecies": "Human",
-        "sortClass": "Knight",
-        "class": ["Knight"],
-        "cost": 3
-    },
-    {
-        "name": "Razor",
+        "name": "Morphling",
         "species": ["Element"],
-        "sortSpecies": "Element",
-        "sortClass": "Mage",
-        "class": ["Mage"],
-        "cost": 3
-    },
-    {
-        "name": "Wind Ranger",
-        "species": ["Elf"],
-        "sortSpecies": "Elf",
-        "sortClass": "Hunter",
-        "class": ["Hunter"],
-        "cost": 3
-    },
-    {
-        "name": "Phantom Assassin",
-        "species": ["Elf"],
-        "sortSpecies": "Elf",
-        "sortClass": "Assassin",
         "class": ["Assassin"],
-        "cost": 3
-    },
-    {
-        "name": "Abaddon",
-        "species": ["Undead"],
-        "sortSpecies": "Undead",
-        "sortClass": "Knight",
-        "class": ["Knight"],
-        "cost": 3
-    },
-    {
-        "name": "Sand King",
-        "species": ["Beast"],
-        "sortSpecies": "Beast",
-        "sortClass": "Assassin",
-        "class": ["Assassin"],
-        "cost": 3
-    },
-    {
-        "name": "Slark",
-        "species": ["Naga"],
-        "sortSpecies": "Naga",
-        "sortClass": "Assassin",
-        "class": ["Assassin"],
-        "cost": 3
-    },
-    {
-        "name": "Sniper",
-        "species": ["Dwarf"],
-        "sortSpecies": "Dwarf",
-        "sortClass": "Hunter",
-        "class": ["Hunter"],
-        "cost": 3
-    },
-    {
-        "name": "Terrorblade",
-        "species": ["Demon"],
-        "sortSpecies": "Demon",
-        "sortClass": "Hunter",
-        "class": ["Demon Hunter"],
-        "cost": 3
-    },
-    {
-        "name": "Viper",
-        "species": ["Dragon"],
-        "sortSpecies": "Dragon",
-        "sortClass": "Assassin",
-        "class": ["Assassin"],
-        "cost": 3
-    },
-    {
-        "name": "Shadow Fiend",
-        "species": ["Demon"],
-        "sortSpecies": "Demon",
-        "sortClass": "Warlock",
-        "class": ["Warlock"],
-        "cost": 3
-    },
-    {
-        "name": "Lina",
-        "species": ["Human"],
-        "sortSpecies": "Human",
-        "sortClass": "Mage",
-        "class": ["Mage"],
-        "cost": 3
-    },
-    {
-        "name": "Doom",
-        "species": ["Demon"],
-        "sortSpecies": "Demon",
-        "sortClass": "Warrior",
-        "class": ["Warrior"],
-        "cost": 4
-    },
-    {
-        "name": "Kunkka",
-        "species": ["Human"],
-        "sortSpecies": "Human",
-        "sortClass": "Warrior",
-        "class": ["Warrior"],
-        "cost": 4
-    },
-    {
-        "name": "Troll Warlord",
-        "species": ["Troll"],
-        "sortSpecies": "Troll",
-        "sortClass": "Warrior",
-        "class": ["Warrior"],
-        "cost": 4
-    },
-    {
-        "name": "Keeper of the Light",
-        "species": ["Human"],
-        "sortSpecies": "Human",
-        "sortClass": "Mage",
-        "class": ["Mage"],
-        "cost": 4
-    },
-    {
-        "name": "Necrophos",
-        "species": ["Undead"],
-        "sortSpecies": "Undead",
-        "sortClass": "Warlock",
-        "class": ["Warlock"],
-        "cost": 4
-    },
-    {
-        "name": "Templar Assassin",
-        "species": ["Elf"],
-        "sortSpecies": "Elf",
-        "sortClass": "Assassin",
-        "class": ["Assassin"],
-        "cost": 4
-    },
-    {
-        "name": "Alchemist",
-        "species": ["Goblin"],
-        "sortSpecies": "Goblin",
-        "sortClass": "Warlock",
-        "class": ["Warlock"],
-        "cost": 4
-    },
-    {
-        "name": "Disruptor",
-        "species": ["Orc"],
-        "sortSpecies": "Orc",
-        "sortClass": "Shaman",
-        "class": ["Shaman"],
-        "cost": 4
-    },
-    {
-        "name": "Medusa",
-        "species": ["Naga"],
-        "sortSpecies": "Naga",
-        "sortClass": "Hunter",
-        "class": ["Hunter"],
-        "cost": 4
-    },
-    {
-        "name": "Dragon Knight",
-        "species": ["Dragon", "Human"],
-        "sortSpecies": "Human",
-        "sortClass": "Knight",
-        "class": ["Knight"],
-        "cost": 4
-    },
-    {
-        "name": "Lone Druid",
-        "species": ["Beast"],
-        "sortSpecies": "Beast",
-        "sortClass": "Druid",
-        "class": ["Druid"],
-        "cost": 4
-    },
-    {
-        "name": "Gyrocopter",
-        "species": ["Dwarf"],
-        "sortSpecies": "Dwarf",
-        "sortClass": "Mech",
-        "class": ["Mech"],
-        "cost": 5
-    },
-    {
-        "name": "Lich",
-        "species": ["Undead"],
-        "sortSpecies": "Undead",
-        "sortClass": "Mage",
-        "class": ["Mage"],
-        "cost": 5
-    },
-    {
-        "name": "Tide Hunter",
-        "species": ["Naga"],
-        "sortSpecies": "Naga",
-        "sortClass": "Hunter",
-        "class": ["Hunter"],
-        "cost": 5
-    },
-    {
-        "name": "Enigma",
-        "species": ["Element"],
-        "sortSpecies": "Element",
-        "sortClass": "Warlock",
-        "class": ["Warlock"],
-        "cost": 5
-    },
-    {
-        "name": "Techies",
-        "species": ["Goblin"],
-        "sortSpecies": "Goblin",
-        "sortClass": "Mech",
-        "class": ["Mech"],
-        "cost": 5
+        "cost": 2,
+        "id": 23
     },
     {
         "name": "Mirana",
         "species": ["Elf"],
-        "sortSpecies": "Elf",
-        "sortClass": "Hunter",
         "class": ["Hunter"],
-        "cost": 3
+        "cost": 2,
+        "id": 56
     },
     {
-        "name": "Riki",
-        "species": ["Satyr"],
-        "sortSpecies": "Satyr",
-        "sortClass": "Hunter",
+        "name": "Lich",
+        "species": ["Undead"],
+        "class": ["Mage"],
+        "cost": 2,
+        "id": 62
+    },
+    {
+        "name": "Lycan",
+        "species": ["Human","Beast"],
+        "class": ["Warrior"],
+        "cost": 3,
+        "id": 26
+    },
+    {
+        "name": "Venomancer",
+        "species": ["Beast"],
+        "class": ["Warlock"],
+        "cost": 3,
+        "id": 27
+    },
+    {
+        "name": "Omniknight",
+        "species": ["Human"],
+        "class": ["Knight"],
+        "cost": 3,
+        "id": 28
+    },
+    {
+        "name": "Razor",
+        "species": ["Element"],
+        "class": ["Mage"],
+        "cost": 3,
+        "id": 29
+    },
+    {
+        "name": "Windranger",
+        "species": ["Elf"],
         "class": ["Hunter"],
-        "cost": 3
+        "cost": 3,
+        "id": 30
+    },
+    {
+        "name": "Phantom Assassin",
+        "species": ["Elf"],
+        "class": ["Assassin"],
+        "cost": 3,
+        "id": 31
+    },
+    {
+        "name": "Abaddon",
+        "species": ["Undead"],
+        "class": ["Knight"],
+        "cost": 3,
+        "id": 32
+    },
+    {
+        "name": "Sniper",
+        "species": ["Dwarf"],
+        "class": ["Hunter"],
+        "cost": 3,
+        "id": 35
+    },
+    {
+        "name": "Viper",
+        "species": ["Dragon"],
+        "class": ["Assassin"],
+        "cost": 3,
+        "id": 37
+    },
+    {
+        "name": "Shadow Fiend",
+        "species": ["Demon"],
+        "class": ["Warlock"],
+        "cost": 3,
+        "id": 38
+    },
+    {
+        "name": "Lina",
+        "species": ["Human"],
+        "class": ["Mage"],
+        "cost": 3,
+        "id": 39
+    },
+    {
+        "name": "Terrorblade",
+        "species": ["Demon"],
+        "class": ["Demon Hunter"],
+        "cost": 3,
+        "id": 36
+    },
+    {
+        "name": "Treant Protector",
+        "species": ["Elf"],
+        "class": ["Druid"],
+        "cost": 3,
+        "id": 22
+    },
+    {
+        "name": "Dazzle",
+        "species": ["Troll"],
+        "class": ["Priest"],
+        "cost": 3,
+        "id": 22
+    },
+    {
+        "name": "Doom",
+        "species": ["Demon"],
+        "class": ["Warrior"],
+        "cost": 4,
+        "id": 33
+    },
+
+    {
+        "name": "Kunkka",
+        "species": ["Human"],
+        "class": ["Warrior"],
+        "cost": 4,
+        "id": 41
+    },
+    {
+        "name": "Troll Warlord",
+        "species": ["Troll"],
+        "class": ["Warrior"],
+        "cost": 4,
+        "id": 42
+    },
+    {
+        "name": "Keeper of the Light",
+        "species": ["Human"],
+        "class": ["Mage"],
+        "cost": 4,
+        "id": 43
+    },
+    {
+        "name": "Necrophos",
+        "species": ["Undead"],
+        "class": ["Warlock"],
+        "cost": 4,
+        "id": 44
+    },
+    {
+        "name": "Templar Assassin",
+        "species": ["Elf"],
+        "class": ["Assassin"],
+        "cost": 4,
+        "id": 45
+    },
+    {
+        "name": "Alchemist",
+        "species": ["Goblin"],
+        "class": ["Warlock"],
+        "cost": 4,
+        "id": 46
+    },
+    {
+        "name": "Disruptor",
+        "species": ["Orc"],
+        "class": ["Shaman"],
+        "cost": 4,
+        "id": 47
+    },
+    {
+        "name": "Medusa",
+        "species": ["Naga"],
+        "class": ["Hunter"],
+        "cost": 4,
+        "id": 48
+    },
+    {
+        "name": "Dragon Knight",
+        "species": ["Dragon", "Human"],
+        "class": ["Knight"],
+        "cost": 4,
+        "id": 49
+    },
+    {
+        "name": "Lone Druid",
+        "species": ["Beast"],
+        "class": ["Druid"],
+        "cost": 4,
+        "id": 50
+    },
+    {
+        "name": "Gyrocopter",
+        "species": ["Dwarf"],
+        "class": ["Mech"],
+        "cost": 5,
+        "id": 51
+    },
+    {
+        "name": "Tide Hunter",
+        "species": ["Naga"],
+        "class": ["Hunter"],
+        "cost": 5,
+        "id": 53
+    },
+    {
+        "name": "Enigma",
+        "species": ["Element"],
+        "class": ["Warlock"],
+        "cost": 5,
+        "id": 54
+    },
+    {
+        "name": "Techies",
+        "species": ["Goblin"],
+        "class": ["Mech"],
+        "cost": 5,
+        "id": 55
     },
     {
         "name": "Death Prophet",
         "species": ["Undead"],
-        "sortSpecies": "Undead",
-        "sortClass": "Warlock",
         "class": ["Warlock"],
-        "cost": 5
+        "cost": 5,
+        "id": 58
+    },
+    {
+        "name": "Zues",
+        "species": ["God"],
+        "class": ["Mage"],
+        "cost": 5,
+        "id": 60
+    },
+    {
+        "name": "Io",
+        "species": ["Elf"],
+        "class": [" "],
+        "cost": 5,
+        "id": 56
+    },
+    {
+        "name": "Sven",
+        "species": ["Demon"],
+        "class": ["Warrior"],
+        "cost": 5,
+        "id": 61
     }
 ]
