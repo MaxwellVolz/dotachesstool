@@ -15,6 +15,9 @@ import Chip from '@material-ui/core/Chip';
 
 import Paper from '@material-ui/core/Paper';
 
+import Tooltip from '@material-ui/core/Tooltip';
+
+
 import autochesspieces from '../../chessPieces';
 
 import Icon from '@material-ui/core/Icon';
@@ -42,6 +45,9 @@ const styles = theme => ({
     margin: {
         margin: '12px 12px 0 0',
     },
+    customWidth: {
+        maxWidth: 500,
+    },
 });
 
 
@@ -56,6 +62,7 @@ let dragonCount = 0;
 let elementCount = 0;
 let elfCount = 0;
 let goblinCount = 0;
+let godCount = 0;
 let humanCount = 0;
 let nagaCount = 0;
 let ogreCount = 0;
@@ -160,7 +167,7 @@ class Combos extends React.Component {
         trollCount = 0;
         undeadCount = 0;
 
-        
+
         assassinCount = 0;
         demonhunterCount = 0;
         druidCount = 0;
@@ -182,6 +189,7 @@ class Combos extends React.Component {
             if (this.props.currentChessPieces[i].species.indexOf('Element') >= 0)++elementCount;
             if (this.props.currentChessPieces[i].species.indexOf('Elf') >= 0)++elfCount;
             if (this.props.currentChessPieces[i].species.indexOf('Goblin') >= 0)++goblinCount;
+            if (this.props.currentChessPieces[i].species.indexOf('God') >= 0)++godCount;
             if (this.props.currentChessPieces[i].species.indexOf('Human') >= 0)++humanCount;
             if (this.props.currentChessPieces[i].species.indexOf('Naga') >= 0)++nagaCount;
             if (this.props.currentChessPieces[i].species.indexOf('Ogre') >= 0)++ogreCount;
@@ -202,7 +210,7 @@ class Combos extends React.Component {
         }
 
 
-    
+
 
 
 
@@ -216,20 +224,24 @@ class Combos extends React.Component {
 
 
             <Paper className={classes.root}>
+                <h5 style={{ 'margin': 0 }}>Combos</h5>
 
                 <div id="combosTable">
                     {
                         beastCount > 0 ? <Badge key={0} className={classes.margin} badgeContent={beastCount}
                             color="primary">
-                            <Chip
-                                avatar={<Avatar alt="Natacha" src={require(`./Combos/beast.png`)} />}
-                                label={`Beasts`}
-                                // onDelete={handleDelete}
-                                className={`beast ${classes.chip}`}
+                            <Tooltip title={beastCount==4 ? '(4) Wild Power: Attack damage increased by 30% for all allies.' : '(2) Wild Power: Attack damage increased by 10% for all allies.' } classes={{ tooltip: classes.customWidth }}>
+                               
+                                <Chip
+                                    avatar={<Avatar alt="Natacha" src={require(`./Combos/beast.png`)} />}
+                                    label={`Beasts`}
+                                    // onDelete={handleDelete}
+                                    className={`beast ${classes.chip}`}
 
-                                // className={classes.chip} 
-                                variant="outlined"
-                            />
+                                    // className={classes.chip} 
+                                    variant="outlined"
+                                />
+                            </Tooltip>
                         </Badge>
                             : ''
                     }
@@ -238,6 +250,8 @@ class Combos extends React.Component {
                         demonCount > 0 ?
                             <Badge key={1} className={classes.margin} badgeContent={demonCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>
+                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/demon.png`)} />}
                                     label={`Demons`}
@@ -247,6 +261,8 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                            </Tooltip>
+
                             </Badge>
                             : ''
                     }
@@ -255,6 +271,7 @@ class Combos extends React.Component {
                         dwarfCount > 0 ?
                             <Badge key={2} className={classes.margin} badgeContent={dwarfCount}
                                 color="primary">
+                            <Tooltip title={dwarfCount==1 ? '' : '(2) Far Sight: Attack range increased by 300' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/dwarf.png`)} />}
                                     label={`Dwarves`}
@@ -264,6 +281,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -272,6 +290,7 @@ class Combos extends React.Component {
                         dragonCount > 0 ?
                             <Badge key={3} className={classes.margin} badgeContent={dragonCount}
                                 color="primary">
+                            <Tooltip title={demonCount>=1 ? '(3) All friendly dragons have 100 mana when the battle starts.' : '' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/dragon.png`)} />}
                                     label={`Dragons`}
@@ -281,6 +300,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -289,6 +309,7 @@ class Combos extends React.Component {
                         elementCount > 0 ?
                             <Badge key={4} className={classes.margin} badgeContent={elementCount}
                                 color="primary">
+                            <Tooltip title={elementCount<2 ? '' : elementCount>=4 ? '(4) Natural Resist: All allies have a 30% chance to turn the attacker into stone for 4 seconds when attacked by melee chess pieces.' : '(2) Natural Resist: All friendly elements have a 30% chance to turn the attacker into stone for 4 seconds when attacked by melee chess pieces.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/element.png`)} />}
                                     label={`Elementals`}
@@ -298,6 +319,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -306,6 +328,7 @@ class Combos extends React.Component {
                         elfCount > 0 ?
                             <Badge key={5} className={classes.margin} badgeContent={elfCount}
                                 color="primary">
+                            <Tooltip title={elfCount<2 ? '' : elfCount>=9 ? '(9) Hide: Evasion increased by 75% for all friendly elves.' : elfCount>=6 ? '(6) Hide: Evasion increased by 45% for all friendly elves.': '(3) Hide: Evasion increased by 20% for all friendly elves.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/elf.png`)} />}
                                     label={`Elves`}
@@ -315,6 +338,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -323,6 +347,9 @@ class Combos extends React.Component {
                         goblinCount > 0 ?
                             <Badge key={6} className={classes.margin} badgeContent={goblinCount}
                                 color="primary">
+                                
+                            <Tooltip title={goblinCount<2 ? '' : goblinCount>=3 ? '(6) Armor and HP regeneration increased by 15 for a all allies.' : '(3) Armor and HP regeneration increased by 15 for a random ally.' } classes={{ tooltip: classes.customWidth }}>                             
+
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/goblin.png`)} />}
                                     label={`Goblins`}
@@ -332,6 +359,26 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
+                            </Badge>
+                            : ''
+                    }
+                     {
+                        godCount > 0 ?
+                            <Badge key={6} className={classes.margin} badgeContent={godCount}
+                                color="primary">
+                            <Tooltip title={godCount==1 ? '(1) Cooldown of all allied units decreased by 50%.' : '(2) Cooldown of all allied units decreased by 75%.' } classes={{ tooltip: classes.customWidth }}>                             
+
+                                <Chip
+                                    avatar={<Avatar alt="Natacha" src={require(`./Combos/god.png`)} />}
+                                    label={`Gods`}
+                                    // onDelete={handleDelete}
+                                    className={`god ${classes.chip}`}
+
+                                    // className={classes.chip} 
+                                    variant="outlined"
+                                />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -340,6 +387,7 @@ class Combos extends React.Component {
                         humanCount > 0 ?
                             <Badge key={7} className={classes.margin} badgeContent={humanCount}
                                 color="primary">
+                            <Tooltip title={humanCount<2 ? '' : humanCount>=6 ? '(6) Persuasion: All friendly humans have 75% chance to silence target for 4s on damage deal' : humanCount>=4 ? '(4) Persuasion: All friendly humans have 45% chance to silence target for 4s on damage deal': '(2) Persuasion: All friendly humans have 20% chance to silence target for 4s on damage deal' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/human.png`)} />}
                                     label={`Humans`}
@@ -349,6 +397,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -357,6 +406,7 @@ class Combos extends React.Component {
                         nagaCount > 0 ?
                             <Badge key={8} className={classes.margin} badgeContent={nagaCount}
                                 color="primary">
+                            <Tooltip title={nagaCount>=2 ? '' : '(2) Magic resistance increased by 35% for all allies.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/naga.png`)} />}
                                     label={`Nagas`}
@@ -366,6 +416,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -374,6 +425,7 @@ class Combos extends React.Component {
                         ogreCount > 0 ?
                             <Badge key={9} className={classes.margin} badgeContent={ogreCount}
                                 color="primary">
+                            <Tooltip title={demonCount>=2 ? '(2) Max health points increased by 5% for all allies.' : '' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/ogre.png`)} />}
                                     label={`Ogres`}
@@ -383,6 +435,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -391,6 +444,7 @@ class Combos extends React.Component {
                         orcCount > 0 ?
                             <Badge key={10} className={classes.margin} badgeContent={orcCount}
                                 color="primary">
+                            <Tooltip title={orcCount<1 ? '' : orcCount>=4 ? '(4) Max health points increased by an additional 600 for all friendly orcs.' : '(2) Max health points increased by an additional 250 for all friendly orcs.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/orc.png`)} />}
                                     label={`Orcs`}
@@ -400,6 +454,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -408,6 +463,7 @@ class Combos extends React.Component {
                         trollCount > 0 ?
                             <Badge key={11} className={classes.margin} badgeContent={trollCount}
                                 color="primary">
+                            <Tooltip title={trollCount<4 ? '' : trollCount>=4 ? '(4) Attack speed increased by 30% for all allies.' : '(2) Attack speed increased by 35% for all friendly trolls.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/troll.png`)} />}
                                     label={`Trolls`}
@@ -417,6 +473,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
@@ -425,6 +482,7 @@ class Combos extends React.Component {
                         undeadCount > 0 ?
                             <Badge key={12} className={classes.margin} badgeContent={undeadCount}
                                 color="primary">
+                            <Tooltip title={undeadCount<2 ? '' : undeadCount>=6 ? '(6) Armor decreased by 18 for all enemies.' : undeadCount>=4 ? '(4) Armor decreased by 11 for all enemies.': '(2) Armor decreased by 6 for all enemies.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/undead.png`)} />}
                                     label={`Undead`}
@@ -434,15 +492,17 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
 
 
-        {
-            assassinCount > 0 ?
+                    {
+                        assassinCount > 0 ?
                             <Badge key={13} className={classes.margin} badgeContent={assassinCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/assassin.png`)} />}
                                     label={`Assassins`}
@@ -452,13 +512,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            demonhunterCount > 0 ?
+                    {
+                        demonhunterCount > 0 ?
                             <Badge key={14} className={classes.margin} badgeContent={demonhunterCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/demonhunter.png`)} />}
                                     label={`Demonhunters`}
@@ -468,13 +530,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            druidCount > 0 ?
+                    {
+                        druidCount > 0 ?
                             <Badge key={15} className={classes.margin} badgeContent={druidCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/druid.png`)} />}
                                     label={`Druids`}
@@ -484,13 +548,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            hunterCount > 0 ?
+                    {
+                        hunterCount > 0 ?
                             <Badge key={16} className={classes.margin} badgeContent={hunterCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/hunter.png`)} />}
                                     label={`Hunters`}
@@ -500,13 +566,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            knightCount > 0 ?
+                    {
+                        knightCount > 0 ?
                             <Badge key={17} className={classes.margin} badgeContent={knightCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/knight.png`)} />}
                                     label={`Knights`}
@@ -516,13 +584,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            mageCount > 0 ?
+                    {
+                        mageCount > 0 ?
                             <Badge key={18} className={classes.margin} badgeContent={mageCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/mage.png`)} />}
                                     label={`Mages`}
@@ -532,13 +602,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            mechCount > 0 ?
+                    {
+                        mechCount > 0 ?
                             <Badge key={19} className={classes.margin} badgeContent={mechCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/mech.png`)} />}
                                     label={`Mechs`}
@@ -548,13 +620,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            shamanCount > 0 ?
+                    {
+                        shamanCount > 0 ?
                             <Badge key={20} className={classes.margin} badgeContent={shamanCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/shaman.png`)} />}
                                     label={`Shamans`}
@@ -564,13 +638,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            warlockCount > 0 ?
+                    {
+                        warlockCount > 0 ?
                             <Badge key={21} className={classes.margin} badgeContent={warlockCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/warlock.png`)} />}
                                     label={`Warlocks`}
@@ -580,13 +656,15 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }
-        {
-            warriorCount > 0 ?
+                    {
+                        warriorCount > 0 ?
                             <Badge key={22} className={classes.margin} badgeContent={warriorCount}
                                 color="primary">
+                            <Tooltip title={demonCount==1 ? '(1) Fel Power: Deal 50% extra pure damage to its target.' : '(1+) Fel Power: Deal 50% extra pure damage to its target. Must have 2 Demon Hunters.' } classes={{ tooltip: classes.customWidth }}>                             
                                 <Chip
                                     avatar={<Avatar alt="Natacha" src={require(`./Combos/warrior.png`)} />}
                                     label={`Warriors`}
@@ -596,6 +674,7 @@ class Combos extends React.Component {
                                     // className={classes.chip} 
                                     variant="outlined"
                                 />
+                                </Tooltip>
                             </Badge>
                             : ''
                     }

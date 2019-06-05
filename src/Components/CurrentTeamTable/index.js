@@ -112,6 +112,8 @@ class CurrentTeam extends React.Component {
 
             <Paper className={classes.root}>
 
+                <h5 style={{'margin':0}}>Squad</h5>
+
 
                 <Table className={classes.table} id="currentTeamTable" padding="dense">
                     <TableHead>
@@ -127,7 +129,7 @@ class CurrentTeam extends React.Component {
                     <TableBody>
                         {
                             this.props.currentChessPieces.map(row => (
-                                <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} pieceName={row.name}>
+                                <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} piecename={row.name}>
                                     <TableCell scope="row" className="pieceIcon" >
                                         <img src={require(`./heroes/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} />
                                     </TableCell>

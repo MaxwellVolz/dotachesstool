@@ -94,6 +94,7 @@ class SimpleTable extends React.Component {
 
             <Paper className={classes.root}>
 
+            <h5 style={{'margin':0}}>Chess Pieces</h5>
 
                 <Table className={classes.table} padding="dense">
                     <TableHead>
@@ -108,7 +109,7 @@ class SimpleTable extends React.Component {
                     </TableHead>
                     <TableBody>
                         {table1.map(row => (
-                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} pieceName={row.name}>
+                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} piecename={row.name}>
                                 <TableCell scope="row" className="pieceIcon" >
                                     <img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} />
                                 </TableCell>
@@ -146,7 +147,7 @@ class SimpleTable extends React.Component {
                     </TableHead>
                     <TableBody>
                         {table2.map(row => (
-                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} pieceName={row.name}>
+                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} piecename={row.name}>
                                 <TableCell scope="row" className="pieceIcon" >
                                     <img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} />
                                 </TableCell>
@@ -175,7 +176,7 @@ class SimpleTable extends React.Component {
                     </TableHead>
                     <TableBody>
                         {table3.map(row => (
-                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} pieceName={row.name}>
+                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} piecename={row.name}>
                                 <TableCell scope="row" className="pieceIcon" >
                                     <img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} />
                                 </TableCell>
