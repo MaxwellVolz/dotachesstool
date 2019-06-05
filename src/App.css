@@ -53,6 +53,27 @@
   background-color:#13191a;
 
 }
+
+
+.pieceIcon{
+  max-width:40px !important;
+}
+
+#currentTeamTable > tbody > tr,#currentTeamTable > tbody > tr{
+  
+  cursor: no-drop;
+
+}
+
+
+.sectionContainer{
+  background-color:#13191a;
+}
+
+img{
+  height:28px;
+  width:28px;
+}
 tr{
   height:20px;
   /* width:32vw; */
@@ -68,6 +89,12 @@ th,th>span{
   color: #bbbbbb !important;
 }
 
+#piecesSection > table > tbody > tr > th,#piecesSection > table > tbody > tr > td{
+
+  text-align:left;
+  border-bottom: 1px solid #333 !important;
+  padding-right:0 !important;
+}
 tr>th, tr>td{
   text-align:left;
   border-bottom: 1px solid #333 !important;
@@ -77,19 +104,11 @@ tr>th:last-child, tr>td:last-child{
   padding: 0;
 }
 tr>td:first-child{
+  padding-right:0 !important;
   padding: 0;
+  max-width:32px;
 }
 
-
-.pieceIcon{
-  max-width:40px !important;
-}
-
-#currentTeamTable > tbody > tr,#currentTeamTable > tbody > tr{
-  
-  cursor: no-drop;
-
-}
 
 
 /* Species */

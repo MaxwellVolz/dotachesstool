@@ -16,13 +16,12 @@ import Icon from '@material-ui/core/Icon';
 
 const styles = theme => ({
     root: {
-        marginLeft: '0.5%',
         position: 'absolute',
         top: '1vh',
-        left: '78vw',
-        width: '21vw',
-        height: '63vh',
-        marginTop: theme.spacing.unit * 3,
+        right: '1vw',
+        width: '20.5vw',
+        height: '77vh',
+        marginTop: 0,
         overflowX: 'hidden',
     },
     table: {
@@ -110,7 +109,7 @@ class CurrentTeam extends React.Component {
         return (
 
 
-            <Paper className={classes.root}>
+            <Paper id="piecesSection" className={`sectionContainer ${classes.root}`}>
 
                 <h5 style={{'margin':0}}>Squad</h5>
 

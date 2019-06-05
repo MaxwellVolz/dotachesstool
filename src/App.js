@@ -47,7 +47,7 @@ class App extends Component {
 
 
     // this.forceUpdate();
-    this.child.refresh() 
+    this.child.refresh()
 
   }
 
@@ -70,14 +70,14 @@ class App extends Component {
 
   chessPieceUnchosen = (chessPiece) => {
     if (!this.state.currentPieces.includes(chessPiece)) return;
-    let nowPieces = this.state.currentPieces.filter(function(piece){
+    let nowPieces = this.state.currentPieces.filter(function (piece) {
       return piece !== chessPiece;
     })
 
-    this.setState({ currentPieces: nowPieces})
+    this.setState({ currentPieces: nowPieces })
 
     // this.forceUpdate();
-    this.child.refresh() 
+    this.child.refresh()
     this.childCombo.refresh()
 
 
@@ -101,10 +101,12 @@ class App extends Component {
         </a> */}
         </header>
         <div id="mainContent">
+
+
           < ChessPieceTable chessPieceChosenFired={this.chessPieceChosen} />
-          < CurrentTeam chessPieceUnchosenFired={this.chessPieceUnchosen} currentChessPieces={this.state.currentPieces} onRef={ref => (this.child = ref)}/>
-          < Combos currentChessPieces={this.state.currentPieces}  onRef={ref => (this.childCombo = ref)}/>
-          
+          < CurrentTeam chessPieceUnchosenFired={this.chessPieceUnchosen} currentChessPieces={this.state.currentPieces} onRef={ref => (this.child = ref)} />
+          < Combos currentChessPieces={this.state.currentPieces} onRef={ref => (this.childCombo = ref)} />
+
         </div>
       </div>
     );

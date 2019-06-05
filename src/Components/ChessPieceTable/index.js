@@ -20,8 +20,8 @@ const styles = theme => ({
         position: 'absolute',
         top: '1vh',
         left: '1vw',
-        height: '88vh',
-        marginTop: theme.spacing.unit * 3,
+        height: '77vh',
+        marginTop: 0,
         overflowX: 'auto',
     },
     table: {
@@ -30,7 +30,7 @@ const styles = theme => ({
         margin: '0 1%'
     },
     row:{
-        height: '28px'
+        height: 0
     }
 });
 
@@ -92,7 +92,7 @@ class SimpleTable extends React.Component {
         return (
 
 
-            <Paper className={classes.root}>
+            <Paper id="piecesSection" className={`sectionContainer ${classes.root}`}>
 
             <h5 style={{'margin':0}}>Chess Pieces</h5>
 
