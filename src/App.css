@@ -1,9 +1,16 @@
+body{ 
+  opacity:0;
+  transition: opacity 2s;
+  -webkit-transition: opacity 2s; /* Safari */
+}
+
 .App {
   text-align: center;
   min-height: 100vh;
   background-color: #282c34;
 
 }
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -65,50 +72,88 @@
 
 }
 
+.simpleTable{
+  font-size:13px;
+  float:left;
+  margin-left:1%;
+  width:32%;
+}
+
+
+td.iconTD > img{
+  height:24px;
+  width:auto;
+}
+
+.maxHeightRowLimiter{
+  height:20px;
+}
+
+.simpleTable > tbody > tr > td:not(first-child),
+.simpleTable > thead > tr > th:not(first-child),
+.currentTeamTable > tbody > tr > td:not(first-child),
+.currentTeamTable > thead > tr > th:not(first-child){
+  text-align:left;
+}
+
+.simpleTable > tbody > tr > td:last-child,
+.simpleTable > thead > tr > th:last-child,
+.currentTeamTable > tbody > tr > td:last-child,
+.currentTeamTable > thead > tr > th:last-child{
+  text-align:right;
+}
+
+
+.currentTeamTable{
+  font-size:13px;
+  width:98%;
+  margin-left:1%;
+}
+
+.comboTable{
+  font-size:13px;
+  width:24%;
+  margin-left:1%;
+  float:left;
+
+}
+
+.comboTable > tbody > tr > td:not(first-child),
+.comboTable > thead > tr > th:not(first-child){
+  text-align:left;
+}
+
+
+
+.comboDesc{
+  text-align:right;
+
+}
+
+.iconTD{
+  padding-right:8px;
+}
+
+.comboAmount{
+  font-size:16px;
+  vertical-align: baseline;
+}
 
 .sectionContainer{
   background-color:#13191a;
 }
 
-img{
+.iconTD > img{
   height:28px;
   width:28px;
 }
-tr{
-  height:20px;
-  /* width:32vw; */
-  background-color:#13191a;
-  cursor: cell;
 
-}
-th,th>span{
-  color: #bbbbbb !important;
-}
 
-.pieceCost{
-  color: #bbbbbb !important;
+.comboIconTD > img{
+  height:24px;
+  width:auto;
+  /* float:right; */
 }
-
-#piecesSection > table > tbody > tr > th,#piecesSection > table > tbody > tr > td{
-
-  text-align:left;
-  border-bottom: 1px solid #333 !important;
-  padding-right:0 !important;
-}
-tr>th, tr>td{
-  text-align:left;
-  border-bottom: 1px solid #333 !important;
-}
-tr>th:last-child, tr>td:last-child{
-  text-align:right;
-  padding: 0;
-}
-tr>td:first-child{
-  padding-right:0 !important;
-  padding: 0;
-  max-width:32px;
-}
-
 
 
 /* Species */

@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Axe",
+        "species": ["Orc"],
+        "class": ["Warrior"],
+        "cost": 1,
+        "id": 0
+    }
+]

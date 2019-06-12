@@ -5,10 +5,13 @@ import './App.css';
 import ChessPieceTable from './Components/ChessPieceTable';
 import CurrentTeam from './Components/CurrentTeamTable';
 import Combos from './Components/CombosTable';
+import autochesspieces from './chessPieces';
 
 let currentChessPieces = [];
 
-let currentCombos = []
+let currentCombos = [];
+
+let binaryHash = "000000000000000000000000000000000000000000000000000000000000";
 
 
 class App extends Component {
@@ -20,88 +23,73 @@ class App extends Component {
       currentPieces: [],
       combos: []
     };
-
-    // beastPieces
-    // demonPieces
-    // dwarfPieces
-    // dragonPieces
-    // elementPieces
-    // elfPieces
-    // goblinPieces
-    // humanPieces
-    // nagaPieces
-    // ogrePieces
-    // orcPieces
-    // trollPieces
-    // undeadPieces
   }
 
-  chessPieceChosen = (chessPiece) => {
+  componentDidMount() {
+      let cleanHash = window.location.hash.split("#")[1] || "";
+
+      for (let i = 0; i < cleanHash.length; i++) {
+        if (cleanHash[i] == 1) {
+          this.chessPieceChosen(autochesspieces.find((x) => x.id === i,true))
+        }
+      }
+  }
+
+  componentDidUpdate() {
+
+  }
+
+
+  chessPieceChosen = (chessPiece,deferUpdate) => {
     if (this.state.currentPieces.includes(chessPiece)) return;
+
+    if(this.state.currentPieces.length > 18) return;
 
     this.state.currentPieces.push(chessPiece);
 
-    this.checkCombos(this.state.currentPieces)
+    // console.log(this.state.currentPieces);
 
-    console.log(this.state.currentPieces);
-
-
-    // this.forceUpdate();
-    this.child.refresh()
-
-  }
-
-  checkCombos = (currentPieces) => {
-
-    let species = currentPieces.map(piece => piece.species)
-
-
-    console.log("species")
-    console.log(species)
-
-    // this.state.combos = currentCombos;
-
-    // this.setState({combos: currentCombos})
-
-
+    if(deferUpdate) this.updateHash(this.state.currentPieces);
 
     this.childCombo.refresh()
+    this.child.refresh()
+  }
+
+  updateHash(currentPieces) {
+
+    let pieceIDs = currentPieces.map(a => a.id);
+
+    let binaryHash = "000000000000000000000000000000000000000000000000000000000000";
+
+    for (let i = 0; i < pieceIDs.length; i++) {
+      binaryHash = binaryHash.substr(0, pieceIDs[i]) + "1" + binaryHash.substr(pieceIDs[i] + 1);
+    }
+
+    window.location.hash = binaryHash;
+
+    console.log('window.location.hash');
+    console.log(window.location.hash);
   }
 
   chessPieceUnchosen = (chessPiece) => {
     if (!this.state.currentPieces.includes(chessPiece)) return;
+
     let nowPieces = this.state.currentPieces.filter(function (piece) {
       return piece !== chessPiece;
     })
 
-    this.setState({ currentPieces: nowPieces })
 
-    // this.forceUpdate();
+    this.setState({ currentPieces: nowPieces })
+    this.updateHash(nowPieces);
+
     this.child.refresh()
     this.childCombo.refresh()
-
-
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-        </header>
         <div id="mainContent">
-
 
           < ChessPieceTable chessPieceChosenFired={this.chessPieceChosen} />
           < CurrentTeam chessPieceUnchosenFired={this.chessPieceUnchosen} currentChessPieces={this.state.currentPieces} onRef={ref => (this.child = ref)} />

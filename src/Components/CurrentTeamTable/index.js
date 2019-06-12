@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 import Paper from '@material-ui/core/Paper';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import autochesspieces from '../../chessPieces';
 
@@ -20,7 +21,7 @@ const styles = theme => ({
         top: '1vh',
         right: '1vw',
         width: '20.5vw',
-        height: '77vh',
+        height: '72vh',
         marginTop: 0,
         overflowX: 'hidden',
     },
@@ -65,7 +66,6 @@ class CurrentTeam extends React.Component {
         for (i = 0; i < elemsToHighlight.length; i++) {
             elemsToHighlight[i].style.backgroundColor = "#1319";
         }
-        //.addClass("highlit");
     }
 
     toggleHoverExit(e) {
@@ -80,7 +80,6 @@ class CurrentTeam extends React.Component {
         for (i = 0; i < elemsToHighlight.length; i++) {
             elemsToHighlight[i].style.backgroundColor = "#13191a";
         }
-        //.removeClass("highlit");
     }
 
     pieceClicked = (e) => {
@@ -88,9 +87,9 @@ class CurrentTeam extends React.Component {
         let pieceName = e.target.parentNode.getAttribute("piecename")
 
 
-        let piece = autochesspieces.find(function(element) { 
-            return element.name == pieceName; 
-          }); 
+        let piece = autochesspieces.find(function (element) {
+            return element.name == pieceName;
+        });
 
 
         this.props.chessPieceUnchosenFired(piece);
@@ -104,56 +103,40 @@ class CurrentTeam extends React.Component {
     render() {
         const { classes } = this.props;
 
-        // let currentPieces = ;
-
         return (
 
 
             <Paper id="piecesSection" className={`sectionContainer ${classes.root}`}>
 
-                <h5 style={{'margin':0}}>Squad</h5>
-
-
-                <Table className={classes.table} id="currentTeamTable" padding="dense">
-                    <TableHead>
-                        <TableRow className={classes.row}>
-                            <TableCell></TableCell>
-
-                            <TableCell>Chess</TableCell>
-                            <TableCell>Spec</TableCell>
-                            <TableCell>Class</TableCell>
-                            {/* <TableCell align="right">Cost</TableCell> */}
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {
-                            this.props.currentChessPieces.map(row => (
-                                <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} piecename={row.name}>
-                                    <TableCell scope="row" className="pieceIcon" >
-                                        <img src={require(`./heroes/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} />
-                                    </TableCell>
-                                    <TableCell
-                                        
-                                        component="th"
-                                        className="chessName">{row.name}
-                                    </TableCell>
-
-                                    <TableCell
-                                        className={row.species.join(" ").toLowerCase()}
-                                        onMouseEnter={this.toggleHoverEnter}
-                                        onMouseLeave={this.toggleHoverExit}>{row.species.join(" ")}
-                                    </TableCell>
-                                    <TableCell
-                                        className={row.class.join(" ").toLowerCase()}
-                                        onMouseEnter={this.toggleHoverEnter}
-                                        onMouseLeave={this.toggleHoverExit}>{row.class.join(" ")}
-                                    </TableCell>
-                                    {/* <TableCell align="right" className="pieceCost">{row.cost}</TableCell> */}
-                                </TableRow>
-                            ))}
-                    </TableBody>
-                </Table>
-
+                <table className="currentTeamTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Chess</th>
+                            <th>Spec</th>
+                            <th>Class</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.currentChessPieces.map(row => (
+                            <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
+                                {/* <div className="maxHeightRowLimiter"> */}
+                                <td className="iconTD"><img src={require(`./heroes/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
+                                <td>{row.name}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.species.join(" ").toLowerCase()}>{row.species.join(" ")}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.class.join(" ").toLowerCase()}>{row.class.join(" ")}</td>
+                                <td>{row.cost}</td>
+                                {/* </div> */}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+ 
             </Paper>
         );
     }

@@ -20,7 +20,7 @@ const styles = theme => ({
         position: 'absolute',
         top: '1vh',
         left: '1vw',
-        height: '77vh',
+        height: '72vh',
         marginTop: 0,
         overflowX: 'auto',
     },
@@ -29,7 +29,7 @@ const styles = theme => ({
         float: 'left',
         margin: '0 1%'
     },
-    row:{
+    row: {
         height: 0
     }
 });
@@ -58,9 +58,7 @@ class SimpleTable extends React.Component {
         for (i = 0; i < elemsToHighlight.length; i++) {
             elemsToHighlight[i].style.backgroundColor = "#1319";
         }
-        //.addClass("highlit");
     }
-
     toggleHoverExit(e) {
 
         let classNames = e.target.className.split(" ");
@@ -73,15 +71,14 @@ class SimpleTable extends React.Component {
         for (i = 0; i < elemsToHighlight.length; i++) {
             elemsToHighlight[i].style.backgroundColor = "#13191a";
         }
-        //.removeClass("highlit");
     }
     pieceClicked = (e) => {
 
         let pieceName = e.target.parentNode.getAttribute("piecename")
 
-        let piece = autochesspieces.find(function(element) { 
-            return element.name == pieceName; 
-          }); 
+        let piece = autochesspieces.find(function (element) {
+            return element.name == pieceName;
+        });
 
         this.props.chessPieceChosenFired(piece);
     }
@@ -94,103 +91,95 @@ class SimpleTable extends React.Component {
 
             <Paper id="piecesSection" className={`sectionContainer ${classes.root}`}>
 
-            <h5 style={{'margin':0}}>Chess Pieces</h5>
+                {/* <h5 style={{'margin':0}}>Chess Pieces</h5> */}
 
-                <Table className={classes.table} padding="dense">
-                    <TableHead>
-                        <TableRow className={classes.row}>
-                            <TableCell></TableCell>
-
-                            <TableCell>Chess</TableCell>
-                            <TableCell>Spec</TableCell>
-                            <TableCell>Class</TableCell>
-                            <TableCell align="right">Cost</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
+                <table className="simpleTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Chess</th>
+                            <th>Spec</th>
+                            <th>Class</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {table1.map(row => (
-                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} piecename={row.name}>
-                                <TableCell scope="row" className="pieceIcon" >
-                                    <img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} />
-                                </TableCell>
-                                <TableCell 
-                                    component="th" 
-                                    className="chessName"
-                                    >{row.name}</TableCell>
-
-                                <TableCell
-                                    className={row.species.join(" ").toLowerCase()}
-                                    onMouseEnter={this.toggleHoverEnter}
-                                    onMouseLeave={this.toggleHoverExit}>{row.species.join(" ")}
-                                </TableCell>
-                                <TableCell 
-                                    className={row.class.join(" ").toLowerCase()}
-                                    onMouseEnter={this.toggleHoverEnter}
-                                    onMouseLeave={this.toggleHoverExit}>{row.class.join(" ")}
-                                </TableCell>
-                                <TableCell align="right" className="pieceCost">{row.cost}</TableCell>
-                            </TableRow>
+                            <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
+                                {/* <div className="maxHeightRowLimiter"> */}
+                                <td className="iconTD"><img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
+                                <td>{row.name}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.species.join(" ").toLowerCase()}>{row.species.join(" ")}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.class.join(" ").toLowerCase()}>{row.class.join(" ")}</td>
+                                <td>{row.cost}</td>
+                                {/* </div> */}
+                            </tr>
                         ))}
-                    </TableBody>
-                </Table>
-
-                <Table className={classes.table} padding="dense">
-                    <TableHead>
-                        <TableRow className={classes.row}>
-                            <TableCell></TableCell>
-
-                            <TableCell>Chess</TableCell>
-                            <TableCell>Spec</TableCell>
-                            <TableCell>Class</TableCell>
-                            <TableCell align="right">Cost</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
+                    </tbody>
+                </table>
+                <table className="simpleTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Chess</th>
+                            <th>Spec</th>
+                            <th>Class</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {table2.map(row => (
-                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} piecename={row.name}>
-                                <TableCell scope="row" className="pieceIcon" >
-                                    <img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} />
-                                </TableCell>
-                                <TableCell component="th" className="chessName">{row.name}</TableCell>
-
-                                <TableCell className={row.species.join(" ").toLowerCase()} onMouseEnter={this.toggleHoverEnter}
-                                    onMouseLeave={this.toggleHoverExit}>{row.species.join(" ")}</TableCell>
-                                <TableCell className={row.class.join(" ").toLowerCase()} onMouseEnter={this.toggleHoverEnter}
-                                    onMouseLeave={this.toggleHoverExit}>{row.class.join(" ")}</TableCell>
-                                <TableCell align="right" className="pieceCost">{row.cost}</TableCell>
-                            </TableRow>
+                            <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
+                                {/* <div className="maxHeightRowLimiter"> */}
+                                <td className="iconTD"><img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
+                                <td>{row.name}</td>
+                                <td
+                                    onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.species.join(" ").toLowerCase()}>{row.species.join(" ")}</td>
+                                <td
+                                    onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.class.join(" ").toLowerCase()}>{row.class.join(" ")}</td>
+                                <td>{row.cost}</td>
+                                {/* </div> */}
+                            </tr>
                         ))}
-                    </TableBody>
-                </Table>
-
-                <Table className={classes.table} padding="dense">
-                    <TableHead>
-                        <TableRow className={classes.row}>
-                            <TableCell></TableCell>
-
-                            <TableCell>Chess</TableCell>
-                            <TableCell>Spec</TableCell>
-                            <TableCell>Class</TableCell>
-                            <TableCell align="right">Cost</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
+                    </tbody>
+                </table>
+                <table className="simpleTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Chess</th>
+                            <th>Spec</th>
+                            <th>Class</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {table3.map(row => (
-                            <TableRow key={row.id} className={classes.row} onClick={this.pieceClicked} piecename={row.name}>
-                                <TableCell scope="row" className="pieceIcon" >
-                                    <img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} />
-                                </TableCell>
-                                <TableCell component="th" className="chessName">{row.name}</TableCell>
-
-                                <TableCell className={row.species.join(" ").toLowerCase()} onMouseEnter={this.toggleHoverEnter}
-                                    onMouseLeave={this.toggleHoverExit}>{row.species.join(" ")}</TableCell>
-                                <TableCell className={row.class.join(" ").toLowerCase()} onMouseEnter={this.toggleHoverEnter}
-                                    onMouseLeave={this.toggleHoverExit}>{row.class.join(" ")}</TableCell>
-                                <TableCell align="right" className="pieceCost">{row.cost}</TableCell>
-                            </TableRow>
+                            <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
+                                {/* <div className="maxHeightRowLimiter"> */}
+                                <td className="iconTD"><img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
+                                <td>{row.name}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.species.join(" ").toLowerCase()}>{row.species.join(" ")}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.class.join(" ").toLowerCase()}>{row.class.join(" ")}</td>
+                                <td>{row.cost}</td>
+                                {/* </div> */}
+                            </tr>
                         ))}
-                    </TableBody>
-                </Table>
+                    </tbody>
+                </table>
+
             </Paper>
         );
     }
