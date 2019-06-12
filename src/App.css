@@ -146,7 +146,7 @@ td.iconTD > img{
 }
 
 .comboAmount{
-  font-size:13px;
+  font-size:12px;
   vertical-align: baseline;
   width: 10px;
 }
@@ -172,7 +172,7 @@ td.iconTD > img{
 
 
 .comboIconTD > img{
-  height:24px;
+  height:22px;
   width:auto;
   /* float:right; */
 }
@@ -194,7 +194,7 @@ td.iconTD > img{
 
 /* Species */
 .beast{
-   color:green !important;
+   color:#00b300 !important;
    order:1;
  }
  .dwarf{
@@ -206,7 +206,7 @@ td.iconTD > img{
    order:3;
  }
  .dragon{
-  color:green !important;
+  color:#ff6666 !important;
    order:4;
  }
  .element{
@@ -242,7 +242,7 @@ td.iconTD > img{
    order:12;
  }
  .undead{
-  color:grey !important;
+  color:#cc00cc !important;
    order:13;
  }
  .god{
@@ -253,7 +253,7 @@ td.iconTD > img{
  /* Classes */
  
  .assassin{
-   color:slategray !important;
+   color:#4d4dff !important;
  }
  .demonhunter{
    color:teal !important;
@@ -274,13 +274,13 @@ td.iconTD > img{
    color:brown !important;
  }
  .shaman{
-   color:blue !important;
+   color: #3333ff !important;
  }
  .warlock{
-   color:purple !important;
+   color:red !important;
  }
  .warrior{
-   color:red !important;
+   color:#bf8040 !important;
  } 
  .priest{
   color:gold !important;

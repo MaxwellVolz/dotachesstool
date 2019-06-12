@@ -42,7 +42,7 @@ const styles = theme => ({
         position: 'absolute',
         top: '0.2vh',
         right: '0',
-        width: '37.8vw',
+        width: '37.6vw',
         height: '99.4vh',
         marginTop: 0,
         overflowX: 'hidden',
@@ -251,7 +251,7 @@ class Combos extends React.Component {
                 <div className="comboContainer">
                     <h5 className="shortHeader">Species</h5>
 
-                    <table className="comboTable">
+                    <table className={`comboTable beast`}>
                         <thead>
                             <tr className="beast">
                                 <th className="comboIconTD">
@@ -274,7 +274,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable dragon`}>
                         <thead>
                             <tr
                                 className="dragon">
@@ -293,7 +293,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable dwarf`}>
                         <thead>
                             <tr
                                 className="dwarf">
@@ -312,7 +312,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable demon`}>
                         <thead>
                             <tr
                                 className="demon">
@@ -336,7 +336,7 @@ class Combos extends React.Component {
 
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable elf`}>
                         <thead>
                             <tr
                                 className="elf">
@@ -365,7 +365,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable goblin`}>
                         <thead>
                             <tr
                                 className="goblin">
@@ -389,7 +389,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable element`}>
                         <thead>
                             <tr
                                 className="element">
@@ -413,7 +413,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable human`}>
                         <thead>
                             <tr
                                 className="human">
@@ -437,7 +437,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable naga`}>
                         <thead>
                             <tr
                                 className="naga">
@@ -456,7 +456,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable orc`}>
                         <thead>
                             <tr
                                 className="orc">
@@ -479,7 +479,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable troll`}>
                         <thead>
                             <tr
                                 className="troll">
@@ -502,7 +502,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable god`}>
                         <thead>
                             <tr
                                 className="god">
@@ -529,7 +529,7 @@ class Combos extends React.Component {
                 <div className="comboContainer">
                     <h5 className="shortHeader">Classes</h5>
 
-                    <table className="comboTable">
+                    <table className={`comboTable assassin`}>
                         <thead>
                             <tr
                                 className="assassin">
@@ -553,7 +553,7 @@ class Combos extends React.Component {
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable demonhunter`}>
                         <thead>
                             <tr
                                 className="demonhunter">
@@ -577,10 +577,9 @@ class Combos extends React.Component {
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable druid`}>
                         <thead>
-                            <tr
-                                className="druid">
+                            <tr className="druid">
                                 <th className="comboIconTD">
                                     <img src={require(`./Combos/druid.png`)} alt={`druidIcon`} />
                                 </th>
@@ -601,7 +600,7 @@ class Combos extends React.Component {
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable hunter`}>
                         <thead>
                             <tr
                                 className="hunter">
@@ -624,7 +623,7 @@ class Combos extends React.Component {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="comboTable">
+                    <table className={`comboTable knight`}>
                         <thead>
                             <tr
                                 className="knight">
@@ -652,7 +651,7 @@ class Combos extends React.Component {
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable mage`}>
                         <thead>
                             <tr
                                 className="mage">
@@ -667,16 +666,16 @@ class Combos extends React.Component {
                         <tbody>
                             <tr className={mageCount >= 3 ? 'highlit' : 'dimmed'}>
                                 <td className="comboAmount">3</td>
-                                <td className="comboDesc">All enemies have their magic resistance reduced by 35%.</td>
+                                <td className="comboDesc">All enemies have magic resistance reduced by 35%.</td>
                             </tr>
                             <tr className={mageCount >= 6 ? 'highlit' : 'dimmed'}>
                                 <td className="comboAmount">6</td>
-                                <td className="comboDesc">All enemies have their magic resistance reduced by an additional 45%.</td>
+                                <td className="comboDesc">All enemies have magic resistance reduced by 45%.</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable mech`}>
                         <thead>
                             <tr
                                 className="mech">
@@ -700,7 +699,7 @@ class Combos extends React.Component {
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable priest`}>
                         <thead>
                             <tr
                                 className="priest">
@@ -720,7 +719,7 @@ class Combos extends React.Component {
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable shaman`}>
                         <thead>
                             <tr
                                 className="shaman">
@@ -740,7 +739,7 @@ class Combos extends React.Component {
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable warlock`}>
                         <thead>
                             <tr
                                 className="warlock">
@@ -759,12 +758,12 @@ class Combos extends React.Component {
                             </tr>
                             <tr className={warlockCount >= 6 ? 'highlit' : 'dimmed'}>
                                 <td className="comboAmount">6</td>
-                                <td className="comboDesc">Allies get an additional +25% lifesteal and spell lifesteal.</td>
+                                <td className="comboDesc">Allies get +25% lifesteal and spell lifesteal.</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <table className="comboTable">
+                    <table className={`comboTable warrior`}>
                         <thead>
                             <tr
                                 className="warrior">
@@ -789,6 +788,31 @@ class Combos extends React.Component {
                                 <td className="comboAmount">9</td>
                                 <td className="comboDesc">All friendly warriors have an additional +9 armor.</td>
                             </tr>
+
+                        </tbody>
+                    </table>
+                    <table className={`comboTable undead`}>
+                        <thead>
+                            <tr
+                                className="undead">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/undead.png`)} alt={`undeadIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="undead">Undead</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={undeadCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">All enemies have -4 armor.</td>
+                            </tr>
+                            <tr className={undeadCount >= 4 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">4</td>
+                                <td className="comboDesc">All enemies have -6 armor.</td>
+                            </tr>
+
 
                         </tbody>
                     </table>

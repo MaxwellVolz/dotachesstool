@@ -8,6 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 
+import Tooltip from '@material-ui/core/Tooltip';
+
+
 import Paper from '@material-ui/core/Paper';
 
 import autochesspieces from '../../chessPieces';
@@ -80,7 +83,7 @@ class SimpleTable extends React.Component {
             return element.name == pieceName;
         });
 
-        this.props.chessPieceChosenFired(piece,true);
+        this.props.chessPieceChosenFired(piece, true);
     }
 
     render() {
@@ -107,8 +110,12 @@ class SimpleTable extends React.Component {
                         {table1.map(row => (
                             <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
                                 {/* <div className="maxHeightRowLimiter"> */}
+
                                 <td className="iconTD"><img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
-                                <td>{row.name}</td>
+                                <Tooltip title={row.skill} aria-label={row.skill}>
+                                    <td>{row.name}</td>
+                                </Tooltip>
+
                                 <td onMouseEnter={this.toggleHoverEnter}
                                     onMouseLeave={this.toggleHoverExit}
                                     className={row.species.join(" ").toLowerCase()}>{row.species.join(" ")}</td>
@@ -136,7 +143,9 @@ class SimpleTable extends React.Component {
                             <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
                                 {/* <div className="maxHeightRowLimiter"> */}
                                 <td className="iconTD"><img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
-                                <td>{row.name}</td>
+                                <Tooltip title={row.skill} aria-label={row.skill}>
+                                    <td>{row.name}</td>
+                                </Tooltip>
                                 <td
                                     onMouseEnter={this.toggleHoverEnter}
                                     onMouseLeave={this.toggleHoverExit}
@@ -166,7 +175,9 @@ class SimpleTable extends React.Component {
                             <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
                                 {/* <div className="maxHeightRowLimiter"> */}
                                 <td className="iconTD"><img src={require(`./Pieces/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
-                                <td>{row.name}</td>
+                                <Tooltip title={row.skill} aria-label={row.skill}>
+                                    <td>{row.name}</td>
+                                </Tooltip>
                                 <td onMouseEnter={this.toggleHoverEnter}
                                     onMouseLeave={this.toggleHoverExit}
                                     className={row.species.join(" ").toLowerCase()}>{row.species.join(" ")}</td>

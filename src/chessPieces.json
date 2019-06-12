@@ -5,425 +5,478 @@
         "class": ["Warrior"],
         "cost": 1,
         "id": 0,
-        "skills":[
-            {
-                "name": "Berserker's Call",
-                "desc": "Axe taunts nearby enemy units, forcing them to attack him, while he gains bonus armor during the duration."
-            }
-        ]
-        
+        "skill": "Axe taunts nearby enemy units, forcing them to attack him, while he gains bonus armor during the duration."
     },
     {
         "name": "Enchantress",
         "species": ["Beast"],
         "class": ["Druid"],
         "cost": 1,
-        "id": 1
+        "id": 1,
+        "skill": "A cloud of wisps heals Enchantress and any friendly units nearby. Lasts 11 seconds."
     },
     {
         "name": "Tusk",
         "species": ["Beast"],
         "class": ["Warrior"],
         "cost": 1,
-        "id": 2
+        "id": 2,
+        "skill": "Tusk connects with his mighty Walrus Punch, a critical strike so powerful it launches its victim into the air. The victim is slowed upon landing."
     },
     {
         "name": "Drow Ranger",
         "species": ["Undead"],
         "class": ["Hunter"],
         "cost": 1,
-        "id": 3
+        "id": 3,
+        "skill": "Increase attack damage and speed of Drow Ranger."
     },
     {
         "name": "Bounty Hunter",
         "species": ["Goblin"],
         "class": ["Assassin"],
         "cost": 1,
-        "id": 4
+        "id": 4,
+        "skill": "Hurls a deadly shuriken at an enemy unit, dealing damage and mini-stunning the target. The shuriken will bounce to Tracked targets within a 1200 radius of each other range."
     },
     {
         "name": "Clockwerk",
         "species": ["Goblin"],
         "class": ["Mech"],
         "cost": 1,
-        "id": 5
+        "id": 5,
+        "skill": "Discharges high-powered shrapnel at random nearby enemy units, dealing minor damage and mini-stun."
     },
     {
         "name": "Shadow Shaman",
         "species": ["Troll"],
         "class": ["Shaman"],
         "cost": 1,
-        "id": 6
+        "id": 6,
+        "skill": "Transforms an enemy unit into a harmless creature, disabling their attacks and abilities."
     },
     {
         "name": "Bat Rider",
         "species": ["Troll"],
         "class": ["Knight"],
         "cost": 1,
-        "id": 7
+        "id": 7,
+        "skill": "Drenches an area in sticky oil, amplifying damage from Batrider's attacks and abilities and slowing enemy reactions."
     },
     {
         "name": "Tinker",
         "species": ["Goblin"],
         "class": ["Mech"],
         "cost": 1,
-        "id": 8
+        "id": 8,
+        "skill": "Launches 3 rockets to hit random enemies. "
     },
     {
         "name": "Anti Mage",
         "species": ["Elf"],
         "class": ["DemonHunter"],
         "cost": 1,
-        "id": 9
+        "id": 9,
+        "skill": "Burns an opponent's mana on each attack. Mana Break deals 50% of the mana burned as damage to the target."
     },
     {
         "name": "Tiny",
         "species": ["Element"],
         "class": ["Warrior"],
         "cost": 1,
-        "id": 10
+        "id": 10,
+        "skill": "Toss an enemy nearby, throw it to the farthest grid and stun"
     },
     {
         "name": "Mars",
         "species": ["God"],
         "class": ["Warrior"],
         "cost": 1,
-        "id": 11
+        "id": 11,
+        "skill": "Mars enters the battle in a defensive stance and cannot attack. Mars wields his massive shield to block a portion of each physical attack when hit from the front or sides. Periodically Mars smashes enemies in a 3-grid radius in front of him with his shield, dealing physical damage."
     },
     {
         "name": "Winter Wyvern",
         "species": ["Dragon"],
         "class": ["Mage"],
         "cost": 1,
-        "id": 12
+        "id": 12,
+        "skill": "Encases an ally in an icy cocoon, freezing them solid while healing a base amount as well as a percentage of their maximum health each second. The cocoon blocks all physical damage."
     },
     {
         "name": "Crystal Maiden",
         "species": ["Human"],
         "class": ["Mage"],
         "cost": 2,
-        "id": 13
+        "id": 13,
+        "skill": "All allies' mana regeneration increased"
     },
     {
         "name": "Beastmaster",
         "species": ["Orc"],
         "class": ["Hunter"],
         "cost": 2,
-        "id": 14
+        "id": 14,
+        "skill": "Sends his axes flying and calls them home again, slicing through enemy units and trees along their path. Each axe can hit an enemy once"
     },
     {
         "name": "Juggernaut",
         "species": ["Orc"],
         "class": ["Warrior"],
         "cost": 2,
-        "id": 15
+        "id": 15,
+        "skill": "Causes a bladestorm of destructive force around Juggernaut, rendering him immune to magic and dealing damage to nearby enemy units."
     },
     {
         "name": "Timbersaw",
         "species": ["Goblin"],
         "class": ["Mech"],
         "cost": 2,
-        "id": 16
+        "id": 16,
+        "skill": "Whirls extremely sharp edges. If an enemy hero is affected, it loses some of its primary attribute for a short duration. Pure Damage."
     },
     {
         "name": "Queen of Pain",
         "species": ["Demon"],
         "class": ["Assassin"],
         "cost": 2,
-        "id": 17
+        "id": 17,
+        "skill": "Lets loose a piercing scream around her, damaging nearby enemies."
     },
     {
         "name": "Puck",
         "species": ["Elf","Dragon"],
         "class": ["Mage"],
         "cost": 2,
-        "id": 18
+        "id": 18,
+        "skill": "Launches a magic orb that floats in a straight path, damaging enemy units along the way."
     },
     {
         "name": "Witch Doctor",
         "species": ["Troll"],
         "class": ["Warlock"],
         "cost": 2,
-        "id": 19
+        "id": 19,
+        "skill": "Launches a cask of paralyzing powder that ricochets between enemy units, stunning and damaging those it hits."
     },
     {
         "name": "Slardar",
         "species": ["Naga"],
         "class": ["Warrior"],
         "cost": 2,
-        "id": 20
+        "id": 20,
+        "skill": "Reduces enemy armor to amplify physical damage."
     },
     {
         "name": "Chaos Knight",
         "species": ["Demon"],
         "class": ["Knight"],
         "cost": 2,
-        "id": 21
+        "id": 21,
+        "skill": "Throws a mysterious bolt of energy at the target unit. It stuns for a random duration and deals random damage."
     },
     {
         "name": "Luna",
         "species": ["Elf"],
         "class": ["Knight"],
         "cost": 2,
-        "id": 22
+        "id": 22,
+        "skill": "Luna's attacks bounce between enemy units. Deals less damage with each bounce."
     },
     {
         "name": "Furion",
         "species": ["Elf"],
         "class": ["Druid"],
         "cost": 2,
-        "id": 23
+        "id": 23,
+        "skill": "Call a treant from a random tree around the chessboard"
     },
     {
         "name": "Morphling",
         "species": ["Element"],
         "class": ["Assassin"],
         "cost": 2,
-        "id": 24
+        "id": 24,
+        "skill": "Morphling dissolves into liquid and surges forward, damaging enemy units in his path. Morphling is invulnerable during Waveform."
     },
     {
         "name": "Mirana",
         "species": ["Elf"],
         "class": ["Hunter"],
         "cost": 2,
-        "id": 25
+        "id": 25,
+        "skill": "Fires a long-ranged arrow with deadly precision to an enemy chess in another chessboard currently under attack/defence from friendly chesses, dealing damage and stun the target. Damage and stun duration increase with range."
     },
     {
         "name": "Lich",
         "species": ["Undead"],
         "class": ["Mage"],
         "cost": 2,
-        "id": 26
+        "id": 26,
+        "skill": "Applies a magical frost shield around an allied piece, granting bonus armor. While the shield is active, ice magic will be affecting enemy pieces within 4 squares every 1 second, doing minor damage. Enemy pieces attacking the protected ally will be impeded by the icy energy, which slows their attacks."
     },
     {
         "name": "Lycan",
         "species": ["Human","Beast"],
         "class": ["Warrior"],
         "cost": 3,
-        "id": 27
+        "id": 27,
+        "skill": "Lycan assumes his lupine form, gaining more HP and summoning 2 wolves."
     },
     {
         "name": "Venomancer",
         "species": ["Beast"],
         "class": ["Warlock"],
         "cost": 3,
-        "id": 28
+        "id": 28,
+        "skill": "Summons a Plague Ward to attack enemy chess pieces."
     },
     {
         "name": "Omniknight",
         "species": ["Human"],
         "class": ["Knight"],
         "cost": 3,
-        "id": 29
+        "id": 29,
+        "skill": "By the power of the Omniscience, Omniknight instantly heals a friendly unit and damages enemy units near it. 200 / 300 / 400"
     },
     {
         "name": "Razor",
         "species": ["Element"],
         "class": ["Mage"],
         "cost": 3,
-        "id": 30
+        "id": 30,
+        "skill": "Releases a wave of energetic plasma that grows in power as it expands, but also zaps on contraction, dealing damage and slowing enemy units caught in its path. Damage and slow increase with distance from Razor. The Plasma Field hits each unit twice, once in each direction."
     },
     {
         "name": "Windranger",
         "species": ["Elf"],
         "class": ["Hunter"],
         "cost": 3,
-        "id": 31
+        "id": 31,
+        "skill": "Windranger charges her bow for up to 1 second for a single powerful shot, which deals more damage the longer it is charged. The arrow deals damage to enemy units and destroys trees in its path. For each enemy that Powershot hits, its damage is reduced by 20%."
     },
     {
         "name": "Phantom Assassin",
         "species": ["Elf"],
         "class": ["Assassin"],
         "cost": 3,
-        "id": 32
+        "id": 32,
+        "skill": "Phantom Assassin refines her combat abilities, gaining the chance to deliver a devastating critical strike to enemy units."
     },
     {
         "name": "Abaddon",
         "species": ["Undead"],
         "class": ["Knight"],
         "cost": 3,
-        "id": 33
+        "id": 33,
+        "skill": "Summons dark energies around an ally unit, creating a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage to the area around it. Removes certain types of negative buffs and stuns on cast."
     },
     {
         "name": "Sniper",
         "species": ["Dwarf"],
         "class": ["Hunter"],
         "cost": 3,
-        "id": 34
+        "id": 34,
+        "skill": "Sniper locks onto a target enemy unit, and after a few seconds fires a devastating shot that deals damage at long range, and mini-stuns the target."
     },
     {
         "name": "Viper",
         "species": ["Dragon"],
         "class": ["Assassin"],
         "cost": 3,
-        "id": 35
+        "id": 35,
+        "skill": "Viper slows the targeted enemy unit's movement and attack speed while also dealing poison damage over time. The slowing effect reduces over the duration of the poison."
     },
     {
         "name": "Shadow Fiend",
         "species": ["Demon"],
         "class": ["Warlock"],
         "cost": 3,
-        "id": 36
+        "id": 36,
+        "skill": "Shadow Fiend gathers his captured souls to release them as lines of demonic energy. "
     },
     {
         "name": "Lina",
         "species": ["Human"],
         "class": ["Mage"],
         "cost": 3,
-        "id": 37
+        "id": 37,
+        "skill": "Fires off a bolt of lightning at a single enemy unit, dealing massive damage."
     },
     {
         "name": "Terrorblade",
         "species": ["Demon"],
         "class": ["DemonHunter"],
         "cost": 3,
-        "id": 38
+        "id": 38,
+        "skill": "Terrorblade transforms to ranged and heals to full."
     },
     {
         "name": "Treant Protector",
         "species": ["Elf"],
         "class": ["Druid"],
         "cost": 3,
-        "id": 39
+        "id": 39,
+        "skill": "Treant plants a life-sapping seed in an enemy unit, draining its health, while simultaneously slowing it. The seed heals friendly units around it. Pulses 7 times."
     },
     {
         "name": "Dazzle",
         "species": ["Troll"],
         "class": ["Priest"],
         "cost": 3,
-        "id": 40
+        "id": 40,
+        "skill": "Prevents ally heroes from dying for a 4 seconds duration. Chooses the allies with the lowest HP."
     },
     {
         "name": "Doom",
         "species": ["Demon"],
         "class": ["Warrior"],
         "cost": 4,
-        "id": 41
+        "id": 41,
+        "skill": "Inflicts a curse that prevents an enemy Hero from casting spells or using items, while taking damage over time. Doom also dispels the hero."
     },
     {
         "name": "Kunkka",
         "species": ["Human"],
         "class": ["Warrior"],
         "cost": 4,
-        "id": 42
+        "id": 42,
+        "skill": "Summons a ghostly ship that sails through the battle before smashing apart, damaging and stunning all enemies caught near the wreckage."
     },
     {
         "name": "Troll Warlord",
         "species": ["Troll"],
         "class": ["Warrior"],
         "cost": 4,
-        "id": 43
+        "id": 43,
+        "skill": "With each continuous blow on the same target, Troll gains increased attack speed. If Troll changes targets, the stack drops to zero."
     },
     {
         "name": "Keeper of the Light",
         "species": ["Human"],
         "class": ["Mage"],
         "cost": 4,
-        "id": 44
+        "id": 44,
+        "skill": "Channels a ball of light energy, building power the longer it's channeled. Once released, the ball deals damage and gives vision in a line. The longer it is channeled, the more damage dealt."
     },
     {
         "name": "Necrophos",
         "species": ["Undead"],
         "class": ["Warlock"],
         "cost": 4,
-        "id": 45
+        "id": 45,
+        "skill": "Necrophos releases a wave of death around him, dealing damage to enemy units and healing allied units."
     },
     {
         "name": "Templar Assassin",
         "species": ["Elf"],
         "class": ["Assassin"],
         "cost": 4,
-        "id": 46
+        "id": 46,
+        "skill": "Templar Assassin becomes highly elusive, avoiding damage while gaining a bonus to her damage. These effects are separate, and have a limited number of instances."
     },
     {
         "name": "Alchemist",
         "species": ["Goblin"],
         "class": ["Warlock"],
         "cost": 4,
-        "id": 47
+        "id": 47,
+        "skill": "Sprays high-pressure acid across a target area. Enemy units within the contaminated area take damage per second and have their armor reduced."
     },
     {
         "name": "Disruptor",
         "species": ["Orc"],
         "class": ["Shaman"],
         "cost": 4,
-        "id": 48
+        "id": 48,
+        "skill": "Creates a damaging static storm that also silences all enemy units in the area for the duration. The damage starts off weak, but increases in power over the duration."
     },
     {
         "name": "Medusa",
         "species": ["Naga"],
         "class": ["Hunter"],
         "cost": 4,
-        "id": 49
+        "id": 49,
+        "skill": "Any enemy units looking at Medusa will have their movement and attack speed slowed. If looking at Medusa while Stone Gaze is active, that unit will turn to stone. Petrified units are stunned and take bonus Physical damage."
     },
     {
         "name": "Dragon Knight",
         "species": ["Dragon", "Human"],
         "class": ["Knight"],
         "cost": 4,
-        "id": 50
+        "id": 50,
+        "skill": "Transforms the Dragon Knight into a powerful elder dragon. Level 1: Green Dragon with Corrosive Breath. Level 2: Red Dragon with Corrosive Breath and Splash Attack. Level 3: Blue Dragon with Corrosive Breath, Splash Attack, and Frost Breath."
     },
     {
         "name": "Lone Druid",
         "species": ["Beast"],
         "class": ["Druid"],
         "cost": 4,
-        "id": 51
+        "id": 51,
+        "skill": "Summon a powerful Spirit Bear. Bear improves with level and has chance to root enemies, disabling attack."
     },
     {
         "name": "Gyrocopter",
         "species": ["Dwarf"],
         "class": ["Mech"],
         "cost": 5,
-        "id": 52
+        "id": 52,
+        "skill": "Call down an aerial missile strike on enemy units in a target area. Two missiles arrive in succession, the first dealing major damage and minor slow for 2 seconds; the second dealing minor damage and major slow for 4 seconds."
     },
     {
         "name": "Tide Hunter",
         "species": ["Naga"],
         "class": ["Hunter"],
         "cost": 5,
-        "id": 53
+        "id": 53,
+        "skill": "Slams the ground, causing tentacles to erupt in all directions, damaging and stunning all nearby enemy units."
     },
     {
         "name": "Enigma",
         "species": ["Element"],
         "class": ["Warlock"],
         "cost": 5,
-        "id": 54
+        "id": 54,
+        "skill": "Damages enemy units in an area of effect based on their maximum hit points."
     },
     {
         "name": "Techies",
         "species": ["Goblin"],
         "class": ["Mech"],
         "cost": 5,
-        "id": 55
+        "id": 55,
+        "skill": "Plants an invisible mine that will only activate when manually detonated."
     },
     {
         "name": "Death Prophet",
         "species": ["Undead"],
         "class": ["Warlock"],
         "cost": 5,
-        "id": 56
+        "id": 56,
+        "skill": "Unleashes evil spirits to drain the life of nearby enemy chesses. At the end of the spell's duration, Death Prophet is healed in proportion to the damage dealt."
     },
     {
         "name": "Zues",
         "species": ["God"],
         "class": ["Mage"],
         "cost": 5,
-        "id": 57
+        "id": 57,
+        "skill": "Zeus strikes all enemy pieces with lightning, no matter where they may be, upon cast, every enemy piece will have 50% chance to get hit, each hit deals fixed magic damage and damage proportional to their current health – it is guaranteed to hit at least 1 target even if all units fail 50% chance. Upon victory deal percentage damage to the enemy courier."
     },
     {
         "name": "Io",
         "species": ["Elf"],
         "class": [" "],
         "cost": 5,
-        "id": 58
+        "id": 58,
+        "skill": "Wild card. Io★ can finish any ★ combo. Io★★ can finish any ★★ combo."
     },
     {
         "name": "Sven",
         "species": ["Demon"],
         "class": ["Warrior"],
         "cost": 5,
-        "id": 59
+        "id": 59,
+        "skill": "Sven gets pumped up! The rogue strength grants bonus damage to Sven and all allied Demon pieces for 60 seconds. Also, Sven's attacks can deal 50% Cleave damage to enemy pieces within 2 square. "
     }
 ]
