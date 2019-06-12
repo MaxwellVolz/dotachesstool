@@ -18,15 +18,15 @@ import Icon from '@material-ui/core/Icon';
 const styles = theme => ({
     root: {
         position: 'absolute',
-        top: '1vh',
-        right: '1vw',
-        width: '20.5vw',
-        height: '72vh',
-        marginTop: 0,
+        bottom: '0.4vh',
+        left: '0.1vw',
+        width: '62vw',
+        height: '26.2vh',
+        marginTop: theme.spacing.unit * 3,
         overflowX: 'hidden',
     },
     table: {
-        // width: '18%',
+        width: '19%',
         float: 'left',
         margin: '0 1%'
     },
@@ -103,11 +103,22 @@ class CurrentTeam extends React.Component {
     render() {
         const { classes } = this.props;
 
+
+        const table1 = this.props.currentChessPieces.slice(0, 5);
+        const table2 = this.props.currentChessPieces.slice(5, 10);
+        const table3 = this.props.currentChessPieces.slice(10, 15);
+
+        // console.log(table1)
+        // console.log(table2)
+        // console.log(table3.length)
+
+
         return (
 
 
             <Paper id="piecesSection" className={`sectionContainer ${classes.root}`}>
 
+                <h5 className="shortHeader">Current Team</h5>
                 <table className="currentTeamTable">
                     <thead>
                         <tr>
@@ -115,11 +126,11 @@ class CurrentTeam extends React.Component {
                             <th>Chess</th>
                             <th>Spec</th>
                             <th>Class</th>
-                            <th>Cost</th>
+                            <th>$</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.currentChessPieces.map(row => (
+                        {table1.map(row => (
                             <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
                                 {/* <div className="maxHeightRowLimiter"> */}
                                 <td className="iconTD"><img src={require(`./heroes/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
@@ -136,6 +147,63 @@ class CurrentTeam extends React.Component {
                         ))}
                     </tbody>
                 </table>
+                <table className="currentTeamTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Chess</th>
+                            <th>Spec</th>
+                            <th>Class</th>
+                            <th>$</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {table2.map(row => (
+                            <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
+                                {/* <div className="maxHeightRowLimiter"> */}
+                                <td className="iconTD"><img src={require(`./heroes/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
+                                <td>{row.name}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.species.join(" ").toLowerCase()}>{row.species.join(" ")}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.class.join(" ").toLowerCase()}>{row.class.join(" ")}</td>
+                                <td>{row.cost}</td>
+                                {/* </div> */}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <table className="currentTeamTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Chess</th>
+                            <th>Spec</th>
+                            <th>Class</th>
+                            <th>$</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {table3.map(row => (
+                            <tr key={row.id} onClick={this.pieceClicked} piecename={row.name}>
+                                {/* <div className="maxHeightRowLimiter"> */}
+                                <td className="iconTD"><img src={require(`./heroes/${row.name.toLowerCase().replace(/\s+/g, '')}.png`)} alt={`${row.name.toLowerCase()}Icon`} /></td>
+                                <td>{row.name}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.species.join(" ").toLowerCase()}>{row.species.join(" ")}</td>
+                                <td onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit}
+                                    className={row.class.join(" ").toLowerCase()}>{row.class.join(" ")}</td>
+                                <td>{row.cost}</td>
+                                {/* </div> */}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                
  
             </Paper>
         );

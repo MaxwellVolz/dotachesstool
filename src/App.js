@@ -43,32 +43,18 @@ class App extends Component {
   chessPieceChosen = (chessPiece,deferUpdate) => {
     if (this.state.currentPieces.includes(chessPiece)) return;
 
-    if(this.state.currentPieces.length > 18) return;
+    if(this.state.currentPieces.length > 20) return;
 
     this.state.currentPieces.push(chessPiece);
 
     // console.log(this.state.currentPieces);
 
+    console.log("defer? " + deferUpdate)
+
     if(deferUpdate) this.updateHash(this.state.currentPieces);
 
     this.childCombo.refresh()
     this.child.refresh()
-  }
-
-  updateHash(currentPieces) {
-
-    let pieceIDs = currentPieces.map(a => a.id);
-
-    let binaryHash = "000000000000000000000000000000000000000000000000000000000000";
-
-    for (let i = 0; i < pieceIDs.length; i++) {
-      binaryHash = binaryHash.substr(0, pieceIDs[i]) + "1" + binaryHash.substr(pieceIDs[i] + 1);
-    }
-
-    window.location.hash = binaryHash;
-
-    console.log('window.location.hash');
-    console.log(window.location.hash);
   }
 
   chessPieceUnchosen = (chessPiece) => {
@@ -86,14 +72,34 @@ class App extends Component {
     this.childCombo.refresh()
   }
 
+  updateHash(currentPieces) {
+
+    console.log('updating Hash');
+
+
+    let pieceIDs = currentPieces.map(a => a.id);
+
+    let binaryHash = "000000000000000000000000000000000000000000000000000000000000";
+
+    for (let i = 0; i < pieceIDs.length; i++) {
+      binaryHash = binaryHash.substr(0, pieceIDs[i]) + "1" + binaryHash.substr(pieceIDs[i] + 1);
+    }
+
+    window.location.hash = binaryHash;
+
+    console.log('window.location.hash');
+    console.log(window.location.hash);
+  }
+
   render() {
     return (
       <div className="App">
         <div id="mainContent">
 
           < ChessPieceTable chessPieceChosenFired={this.chessPieceChosen} />
-          < CurrentTeam chessPieceUnchosenFired={this.chessPieceUnchosen} currentChessPieces={this.state.currentPieces} onRef={ref => (this.child = ref)} />
+
           < Combos currentChessPieces={this.state.currentPieces} onRef={ref => (this.childCombo = ref)} />
+          < CurrentTeam chessPieceUnchosenFired={this.chessPieceUnchosen} currentChessPieces={this.state.currentPieces} onRef={ref => (this.child = ref)} />
 
         </div>
       </div>

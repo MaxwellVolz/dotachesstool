@@ -40,31 +40,22 @@ import Icon from '@material-ui/core/Icon';
 const styles = theme => ({
     root: {
         position: 'absolute',
-        bottom: '1vh',
-        left: '1vw',
-        width: '98vw',
-        height: '25vh',
-        marginTop: theme.spacing.unit * 3,
+        top: '0.2vh',
+        right: '0',
+        width: '37.8vw',
+        height: '99.4vh',
+        marginTop: 0,
         overflowX: 'hidden',
+
     },
     table: {
-        width: '19%',
+        // width: '18%',
         float: 'left',
         margin: '0 1%'
     },
     row: {
         height: '28px',
         width: '100%',
-    },
-    margin: {
-        margin: '12px 12px 0 0',
-    },
-    customWidth: {
-        maxWidth: 500,
-    },
-    nopadding: {
-        padding: '0 24px 0 0',
-        borderBottom: 'none !important'
     }
 });
 
@@ -143,11 +134,29 @@ class Combos extends React.Component {
     }
 
     toggleHoverEnter(e) {
-        console.log("toggleHoverEnter")
+        let classNames = e.target.className.split(" ");
+
+        let classToHighlight = classNames[classNames.length - 1]
+
+        let elemsToHighlight = document.getElementsByClassName(classToHighlight);
+
+        let i;
+        for (i = 0; i < elemsToHighlight.length; i++) {
+            elemsToHighlight[i].style.backgroundColor = "#1319";
+        }
     }
 
     toggleHoverExit(e) {
-        console.log("toggleHoverExit")
+        let classNames = e.target.className.split(" ");
+
+        let classToHighlight = classNames[classNames.length - 1]
+
+        let elemsToHighlight = document.getElementsByClassName(classToHighlight);
+
+        let i;
+        for (i = 0; i < elemsToHighlight.length; i++) {
+            elemsToHighlight[i].style.backgroundColor = "#13191a";
+        }
 
     }
 
@@ -187,7 +196,6 @@ class Combos extends React.Component {
         trollCount = 0;
         undeadCount = 0;
 
-
         assassinCount = 0;
         demonhunterCount = 0;
         druidCount = 0;
@@ -199,6 +207,7 @@ class Combos extends React.Component {
         shamanCount = 0;
         warlockCount = 0;
         warriorCount = 0;
+
 
 
         for (let i = 0; i < piecesAmount; i++) {
@@ -218,7 +227,7 @@ class Combos extends React.Component {
             if (this.props.currentChessPieces[i].species.indexOf('Undead') >= 0)++undeadCount;
 
             if (this.props.currentChessPieces[i].class.indexOf('Assassin') >= 0)++assassinCount;
-            if (this.props.currentChessPieces[i].class.indexOf('Demonhunter') >= 0)++demonhunterCount;
+            if (this.props.currentChessPieces[i].class.indexOf('DemonHunter') >= 0)++demonhunterCount;
             if (this.props.currentChessPieces[i].class.indexOf('Druid') >= 0)++druidCount;
             if (this.props.currentChessPieces[i].class.indexOf('Hunter') >= 0)++hunterCount;
             if (this.props.currentChessPieces[i].class.indexOf('Knight') >= 0)++knightCount;
@@ -235,36 +244,555 @@ class Combos extends React.Component {
 
 
 
+
         return (
-            <Paper id="piecesSection" className={`sectionContainer ${classes.root}`}>
+            <Paper id="comboSection" className={`sectionContainer ${classes.root}`}>
 
-                <table className="comboTable">
-                    <thead>
-                        <tr>
-                           <th className="comboIconTD">
-                                <img src={require(`./Combos/beast.png`)} alt={`beastIcon`} />
-                            </th>
-                            <th className="beast">Beasts</th>
+                <div className="comboContainer">
+                    <h5 className="shortHeader">Species</h5>
 
-                        </tr>
-                    </thead>
-                    <tbody>
+                    <table className="comboTable">
+                        <thead>
+                            <tr className="beast">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/beast.png`)} alt={`beastIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="beast">Beasts</th>
 
-                                <tr>
-                                    <td className="comboAmount">2</td>
-                                    <td className="comboDesc">All allies have +10% attack damage, including summoned units.</td>
-                                </tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={beastCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">All allies have +10% attack damage.</td>
+                            </tr>
 
-                                <tr>
-                                    <td className="comboAmount">4</td>
-                                    <td className="comboDesc">All allies have +20% attack damage, including summoned units.</td>
-                                </tr>
+                            <tr className={beastCount >= 4 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">4</td>
+                                <td className="comboDesc">All allies have +20% attack damage.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="dragon">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/dragon.png`)} alt={`dragonIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="dragon">Dragons</th>
 
-                  
-                    </tbody>
-                </table>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={dragonCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">All friendly dragons have 100 mana when battle starts.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="dwarf">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/dwarf.png`)} alt={`dwarfIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="dwarf">Dwarves</th>
 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={dwarfCount >= 1 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">1</td>
+                                <td className="comboDesc">Attack range increased by 300.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="demon">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/demon.png`)} alt={`demonIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="demon">Demons</th>
 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={'dimmed'}>
+                                <td className="comboAmount"></td>
+                                <td className="comboDesc">Active whens only one demon in play.</td>
+                            </tr>
+                            <tr className={demonCount == 1 ? 'highlit' : (demonCount > 1 && demonhunterCount > 1) ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">1</td>
+                                <td className="comboDesc">Deal 50% extra pure damage to the target.</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="elf">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/elf.png`)} alt={`elfIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="elf">Elves</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={elfCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">Your elves get +20% evasion.</td>
+                            </tr>
+
+                            <tr className={elfCount >= 6 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">6</td>
+                                <td className="comboDesc">Your elves get +25% evasion.</td>
+                            </tr>
+
+                            <tr className={elfCount >= 9 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">9</td>
+                                <td className="comboDesc">Your elves get +30% evasion.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="goblin">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/goblin.png`)} alt={`goblinIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="goblin">Goblins</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={goblinCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">Grants a random ally +15 armor and +10 regen.</td>
+                            </tr>
+
+                            <tr className={goblinCount >= 6 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">6</td>
+                                <td className="comboDesc">Grants all allies with +15 armor and +10 regen.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="element">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/element.png`)} alt={`elementIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="element">Elementals</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={elementCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">30% chance to stun 4s melee attacks on hit.</td>
+                            </tr>
+
+                            <tr className={elementCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">4</td>
+                                <td className="comboDesc">30% chance to stun 4 seconds to melee attackers on hit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="human">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/human.png`)} alt={`humanIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="human">Humans</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={humanCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">Your humans get 20% chance to silence target for 4s on attack.</td>
+                            </tr>
+
+                            <tr className={humanCount >= 4 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">4</td>
+                                <td className="comboDesc">Your humans get 25% chance to silence target for 4s on attack.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="naga">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/naga.png`)} alt={`nagaIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="naga">Nagas</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={nagaCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">All allies have +35% magic resistance.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="orc">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/orc.png`)} alt={`orcIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="orc">Orc</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={orcCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">Your orcs get +250 max HP.</td>
+                            </tr>
+                            <tr className={orcCount >= 4 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">4</td>
+                                <td className="comboDesc">Your orcs get +350 max HP.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="troll">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/troll.png`)} alt={`trollIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="troll">Trolls</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={trollCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">Your trolls get +35 attack speed.</td>
+                            </tr>
+                            <tr className={trollCount >= 4 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">4</td>
+                                <td className="comboDesc">All allies get +30 attack speed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="god">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/god.png`)} alt={`godIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="god">God</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={godCount >= 1 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">1</td>
+                                <td className="comboDesc">All allies cooldown get reduced by 50%.</td>
+                            </tr>
+                            <tr className={godCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">All allies cooldown get reduced by 50%.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div className="comboContainer">
+                    <h5 className="shortHeader">Classes</h5>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="assassin">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/assassin.png`)} alt={`assassinIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="assassin">Assassins</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={assassinCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">Your assassins get 15% chance to critical hit for 350%.</td>
+                            </tr>
+                            <tr className={assassinCount >= 6 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">6</td>
+                                <td className="comboDesc">Your assassins get 15% chance to critical hit for 450%.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="demonhunter">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/demonhunter.png`)} alt={`demonhunterIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="demonhunter">Demon Hunters</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={demonhunterCount >= 1 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">1</td>
+                                <td className="comboDesc">Negate enemy demon power.</td>
+                            </tr>
+                            <tr className={demonhunterCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">Your demons retain their Fel Power.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="druid">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/druid.png`)} alt={`druidIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="druid">Druids</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={druidCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">Two Druid★ can upgrade to a Druid★★.</td>
+                            </tr>
+                            <tr className={druidCount >= 4 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">4</td>
+                                <td className="comboDesc">Two Druid★★ can upgrade to a Druid★★★.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="hunter">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/hunter.png`)} alt={`hunterIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="hunter">Hunters</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={hunterCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">Your hunters get +30 base attack damage and +30% chance to pierce through evasion.</td>
+                            </tr>
+                            <tr className={hunterCount >= 6 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">6</td>
+                                <td className="comboDesc">Your hunters get +40 base attack damage and +40% chance to pierce through evasion.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="knight">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/knight.png`)} alt={`knightIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="knight">Knights</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={'dimmed'}>
+                                <td className="comboAmount"></td>
+                                <td className="comboDesc">Shield gives 80% magic res and 30 armor for 3 seconds.</td>
+                            </tr>
+                            <tr className={knightCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">Your knights get 40% chance to proc a shield.</td>
+                            </tr>
+                            <tr className={knightCount >= 6 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">6</td>
+                                <td className="comboDesc">All allies get 40% chance to proc a shield.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="mage">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/mage.png`)} alt={`mageIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="mage">Mages</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={mageCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">All enemies have their magic resistance reduced by 35%.</td>
+                            </tr>
+                            <tr className={mageCount >= 6 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">6</td>
+                                <td className="comboDesc">All enemies have their magic resistance reduced by an additional 45%.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="mech">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/mech.png`)} alt={`mechIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="mech">Mechs</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={mechCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">Your mechs have +15 HP regeneration.</td>
+                            </tr>
+                            <tr className={mechCount >= 4 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">4</td>
+                                <td className="comboDesc">Your mechs have an additional +25 HP regeneration.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="priest">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/priest.png`)} alt={`priestIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="priest">Priests</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={priestCount >= 1 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">Reduce damage to your courier by 20%.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="shaman">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/shaman.png`)} alt={`shamanIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="shaman">Shaman</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={shamanCount >= 2 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">2</td>
+                                <td className="comboDesc">Hexes a random enemy for 6s when battle starts.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="warlock">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/warlock.png`)} alt={`warlockIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="warlock">Warlock</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={warlockCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">Allies get +15% lifesteal and spell lifesteal.</td>
+                            </tr>
+                            <tr className={warlockCount >= 6 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">6</td>
+                                <td className="comboDesc">Allies get an additional +25% lifesteal and spell lifesteal.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="comboTable">
+                        <thead>
+                            <tr
+                                className="warrior">
+                                <th className="comboIconTD">
+                                    <img src={require(`./Combos/warrior.png`)} alt={`warriorIcon`} />
+                                </th>
+                                <th onMouseEnter={this.toggleHoverEnter}
+                                    onMouseLeave={this.toggleHoverExit} className="warrior">Warrior</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className={warriorCount >= 3 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">3</td>
+                                <td className="comboDesc">All friendly warriors have +5 armor.</td>
+                            </tr>
+                            <tr className={warriorCount >= 6 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">6</td>
+                                <td className="comboDesc">All friendly warriors have an additional +7 armor.</td>
+                            </tr>
+                            <tr className={warriorCount >= 9 ? 'highlit' : 'dimmed'}>
+                                <td className="comboAmount">9</td>
+                                <td className="comboDesc">All friendly warriors have an additional +9 armor.</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
                 {/* < Beasts />
                 < Demons />
                 < Dwarf />

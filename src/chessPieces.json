@@ -4,7 +4,14 @@
         "species": ["Orc"],
         "class": ["Warrior"],
         "cost": 1,
-        "id": 0
+        "id": 0,
+        "skills":[
+            {
+                "name": "Berserker's Call",
+                "desc": "Axe taunts nearby enemy units, forcing them to attack him, while he gains bonus armor during the duration."
+            }
+        ]
+        
     },
     {
         "name": "Enchantress",
@@ -65,9 +72,9 @@
     {
         "name": "Anti Mage",
         "species": ["Elf"],
-        "class": ["Demon Hunter"],
+        "class": ["DemonHunter"],
         "cost": 1,
-        "id": 90
+        "id": 9
     },
     {
         "name": "Tiny",
@@ -268,7 +275,7 @@
     {
         "name": "Terrorblade",
         "species": ["Demon"],
-        "class": ["Demon Hunter"],
+        "class": ["DemonHunter"],
         "cost": 3,
         "id": 38
     },

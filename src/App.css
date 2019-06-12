@@ -41,9 +41,6 @@ body{
   }
 }
 
-#combosTable{
-  
-}
 
 #mainContent{
   display: flex;
@@ -66,10 +63,19 @@ body{
   max-width:40px !important;
 }
 
-#currentTeamTable > tbody > tr,#currentTeamTable > tbody > tr{
-  
+.currentTeamTable > tbody > tr,#currentTeamTable > tbody > tr{
   cursor: no-drop;
+  -webkit-user-select: none;  /* Chrome / Safari */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */    
+}
 
+.currentTeamTable{
+  font-size:13px;
+  width:32%;
+  margin-left:1%;
+  float:left;
 }
 
 .simpleTable{
@@ -77,9 +83,17 @@ body{
   float:left;
   margin-left:1%;
   width:32%;
+  cursor: cell;
+  -webkit-user-select: none;  /* Chrome / Safari */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */    
 }
 
-
+.shortHeader{
+  margin: 1px 0;
+  color: #999;
+}
 td.iconTD > img{
   height:24px;
   width:auto;
@@ -101,20 +115,28 @@ td.iconTD > img{
 .currentTeamTable > tbody > tr > td:last-child,
 .currentTeamTable > thead > tr > th:last-child{
   text-align:right;
+  width:0;
+}
+
+#piecesSection > table > thead > tr > th{
+  color: #777;
 }
 
 
-.currentTeamTable{
-  font-size:13px;
-  width:98%;
-  margin-left:1%;
+.comboContainer{
+  height:100%;
+  width:49%;
 }
 
 .comboTable{
   font-size:13px;
-  width:24%;
+  width:98%;
   margin-left:1%;
   float:left;
+  -webkit-user-select: none;  /* Chrome / Safari */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
 
 }
 
@@ -123,21 +145,21 @@ td.iconTD > img{
   text-align:left;
 }
 
-
+.comboAmount{
+  font-size:13px;
+  vertical-align: baseline;
+  width: 10px;
+}
 
 .comboDesc{
   text-align:right;
-
+  font-size:11px;
 }
 
 .iconTD{
   padding-right:8px;
 }
 
-.comboAmount{
-  font-size:16px;
-  vertical-align: baseline;
-}
 
 .sectionContainer{
   background-color:#13191a;
@@ -153,6 +175,20 @@ td.iconTD > img{
   height:24px;
   width:auto;
   /* float:right; */
+}
+
+#comboSection{
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.highlit{
+
+}
+
+.dimmed{
+  color: #777;
 }
 
 

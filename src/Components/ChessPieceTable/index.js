@@ -16,11 +16,11 @@ import Icon from '@material-ui/core/Icon';
 
 const styles = theme => ({
     root: {
-        width: '77vw',
+        width: '62vw',
         position: 'absolute',
-        top: '1vh',
-        left: '1vw',
-        height: '72vh',
+        top: '0.2vh',
+        left: '0.1vw',
+        height: '72.8vh',
         marginTop: 0,
         overflowX: 'auto',
     },
@@ -80,7 +80,7 @@ class SimpleTable extends React.Component {
             return element.name == pieceName;
         });
 
-        this.props.chessPieceChosenFired(piece);
+        this.props.chessPieceChosenFired(piece,true);
     }
 
     render() {
@@ -91,7 +91,7 @@ class SimpleTable extends React.Component {
 
             <Paper id="piecesSection" className={`sectionContainer ${classes.root}`}>
 
-                {/* <h5 style={{'margin':0}}>Chess Pieces</h5> */}
+                <h5 className="shortHeader">Chess Pieces</h5>
 
                 <table className="simpleTable">
                     <thead>
@@ -100,7 +100,7 @@ class SimpleTable extends React.Component {
                             <th>Chess</th>
                             <th>Spec</th>
                             <th>Class</th>
-                            <th>Cost</th>
+                            <th>$</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -128,7 +128,7 @@ class SimpleTable extends React.Component {
                             <th>Chess</th>
                             <th>Spec</th>
                             <th>Class</th>
-                            <th>Cost</th>
+                            <th>$</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -158,7 +158,7 @@ class SimpleTable extends React.Component {
                             <th>Chess</th>
                             <th>Spec</th>
                             <th>Class</th>
-                            <th>Cost</th>
+                            <th>$</th>
                         </tr>
                     </thead>
                     <tbody>
