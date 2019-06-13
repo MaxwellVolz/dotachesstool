@@ -40,9 +40,9 @@ import Icon from '@material-ui/core/Icon';
 const styles = theme => ({
     root: {
         position: 'absolute',
-        top: '0.2vh',
-        right: '0',
-        width: '37.6vw',
+        top: '0.4vh',
+        right: '0.2vw',
+        width: '37.4vw',
         height: '99.4vh',
         marginTop: 0,
         overflowX: 'hidden',
@@ -515,11 +515,40 @@ class Combos extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className={godCount >= 1 ? 'highlit' : 'dimmed'}>
+                            <tr className="dimmed">
+                                <td className="comboAmount"></td>
+                                <td className="comboDesc">Active when all other species combos are inactive.</td>
+                            </tr>
+                            <tr className={
+                                    godCount >= 1 
+                                    && beastCount < 2
+                                    && dragonCount < 3
+                                    && dwarfCount < 1
+                                    && demonCount < 1
+                                    && elfCount < 3
+                                    && goblinCount < 3
+                                    && elementCount < 2
+                                    && humanCount < 2
+                                    && nagaCount < 2
+                                    && orcCount < 2
+                                    && trollCount < 2
+                                     ? 'highlit' : 'dimmed'}>
                                 <td className="comboAmount">1</td>
                                 <td className="comboDesc">All allies cooldown get reduced by 50%.</td>
                             </tr>
-                            <tr className={godCount >= 2 ? 'highlit' : 'dimmed'}>
+                            <tr className={ godCount >= 2 
+                                    && beastCount < 2
+                                    && dragonCount < 3
+                                    && dwarfCount < 1
+                                    && demonCount < 1
+                                    && elfCount < 3
+                                    && goblinCount < 3
+                                    && elementCount < 2
+                                    && humanCount < 2
+                                    && nagaCount < 2
+                                    && orcCount < 2
+                                    && trollCount < 2
+                                     ? 'highlit' : 'dimmed'}>
                                 <td className="comboAmount">2</td>
                                 <td className="comboDesc">All allies cooldown get reduced by 50%.</td>
                             </tr>

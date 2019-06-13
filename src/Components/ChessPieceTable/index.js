@@ -21,8 +21,8 @@ const styles = theme => ({
     root: {
         width: '62vw',
         position: 'absolute',
-        top: '0.2vh',
-        left: '0.1vw',
+        top: '0.4vh',
+        left: '0.2vw',
         height: '72.8vh',
         marginTop: 0,
         overflowX: 'auto',
@@ -92,7 +92,7 @@ class SimpleTable extends React.Component {
         return (
 
 
-            <Paper id="piecesSection" className={`sectionContainer ${classes.root}`}>
+            <Paper id="chessPiecesContainer" className={`sectionContainer ${classes.root}`}>
 
                 <h5 className="shortHeader">Chess Pieces</h5>
 

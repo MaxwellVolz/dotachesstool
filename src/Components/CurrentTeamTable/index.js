@@ -18,8 +18,8 @@ import Icon from '@material-ui/core/Icon';
 const styles = theme => ({
     root: {
         position: 'absolute',
-        bottom: '0.4vh',
-        left: '0.1vw',
+        bottom: '0.2vh',
+        left: '0.2vw',
         width: '62vw',
         height: '26.2vh',
         marginTop: theme.spacing.unit * 3,

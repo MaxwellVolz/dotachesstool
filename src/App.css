@@ -2,13 +2,14 @@ body{
   opacity:0;
   transition: opacity 2s;
   -webkit-transition: opacity 2s; /* Safari */
+  overflow-y: hidden;
 }
 
 .App {
   text-align: center;
   min-height: 100vh;
   background-color: #282c34;
-
+  overflow-y: hidden;
 }
 
 
@@ -143,6 +144,11 @@ td.iconTD > img{
 .comboTable > tbody > tr > td:not(first-child),
 .comboTable > thead > tr > th:not(first-child){
   text-align:left;
+}
+
+.tutorialButton{
+  z-index:5;
+  top: -2px;
 }
 
 .comboAmount{
